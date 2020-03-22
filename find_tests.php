@@ -92,8 +92,6 @@ function search_test($set, $friend)
                             Test " . $test_number . "
                           </h4>
                           <p class='card-text'>
-                              Ile par skończyło? <br />
-                              Ostatnia odzywka -data 
                           </p>
                         </div>
                       </div>
