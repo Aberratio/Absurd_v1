@@ -4,6 +4,7 @@ include("get_test_details.php");
 include("get_next_bidding_page.php");
 
 $test_id = $_GET['biddingtest'];
+$set_id = $_GET['biddingset'];
 $test_number = $_GET['test_number'];
 $friend = $_GET['friend'];
 
@@ -79,6 +80,9 @@ if (!isset($_SESSION['is_logged'])) {
                                 <!-- TEST 1 -->
                                 <div class="card mb-4">
                                     <div class="row no-gutters mt-2">
+                                        <a href='choose_bidding_test.php?type=0&set=<?php echo $set_id; ?>&friend=<?php echo $friend ?>' class='text-decoration-none ml-2 mb-2'>
+                                            <i class="fas fa-long-arrow-alt-left mr-2"></i> Back
+                                        </a>
                                         <div class='player_turn' style='width: 100%;'> Turn:
                                             <b>
                                                 <div id="turn"><?php get_player($test_id); ?></div>

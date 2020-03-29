@@ -4,6 +4,7 @@ include("get_test_details.php");
 include("get_next_bidding_page.php");
 
 $test_id = $_GET['biddingtest'];
+$set_id = $_GET['biddingset'];
 $test_main_id = $_GET['test_main_id'];
 $test_number = $_GET['test_number'];
 $friend = $_GET['friend'];
@@ -81,20 +82,27 @@ if (!isset($_SESSION['is_logged'])) {
                                 <!-- POINTS PAGE <div class='col-auto'> -->
                                 <div class="card mb-4">
                                     <div class="row no-gutters mt-2">
-                                        <div class='col ml-1'>
-                                            <div class='card-block px-2' style="display: table;">
-                                                <h4>
-                                                    <a href="ranking_test.php?test_id=<?php echo $test_main_id ?>"> Ranking </a>
-                                                </h4>
-                                                <p class='card-text'>
-                                                    <?php get_both_hands($test_id); ?>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div id="points_table" style="float: left; margin-left: 30px;">
-                                            <?php get_points_table($test_id); ?>
-                                        </div>
+                                        <a href='choose_bidding_test.php?type=0&set=<?php echo $set_id; ?>&friend=<?php echo $friend ?>' class='text-decoration-none ml-2 mr-3 mb-2'>
+                                            <i class="fas fa-long-arrow-alt-left mr-2"></i> Back
+                                        </a>
+                                        <h3 class="ml-5">
+                                            <a href="ranking_test.php?test_id=<?php echo $test_main_id ?>" class="text-capitalize text-decoration-none"><i class="fas fa-medal mr-2 text-warning"></i> Ranking </a>
+                                        </h3>
+                                        <div style='width: 100%;' class="mt-2">
+                                            <div class='col ml-1 p-auto ml-md-5 ml-sm-2 ml-1'>
+                                                <div class='card-block px-2' style="display: table;">
+                                                    <p class='card-text'>
+                                                        <?php get_both_hands($test_id); ?>
+                                                    </p>
 
+                                                    <div id="points_table" style="float: left;">
+                                                        <?php get_points_table($test_id); ?>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
                                         <div style="clear: both;"> </div>
 
                                         <div id="bidding" style="float:left; margin-top: 50px;">
