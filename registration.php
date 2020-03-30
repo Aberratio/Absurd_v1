@@ -116,7 +116,7 @@ if (isset($_POST['user'])) {
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
     <title>Absurd - Bridge Platform</title>
     <style>
         .error {

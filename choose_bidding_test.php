@@ -19,10 +19,10 @@ if (!isset($_SESSION['is_logged'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
     <title>Absurd - Bridge Platform</title>
 
-    <script type="text/javascript" src="js/biddingbox.js">
+    <script type="text/javascript" src="js/biddingbox2.js">
 
     </script>
 </head>
