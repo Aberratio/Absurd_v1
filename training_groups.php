@@ -66,12 +66,12 @@ if ($_SESSION['role'] != 2) {
             <div style="margin-top: 50px; width: 500px; margin: auto; font-size:24px;">
 
                 <div>
-                    <p style="font-size: 32px; color: rgb(247, 109, 109);  margin-top: 20px; margin-bottom: 20px; text-align:center;">Dodaj grupę</p>
+                    <p style="font-size: 32px; color: rgb(247, 109, 109);  margin-top: 20px; margin-bottom: 20px; text-align:center;">Add group</p>
                     <form method="get">
-                        <input type="text" class="form-control" placeholder="Nazwa grupy" name="group_name" style="margin-bottom: 20px;" />
-                        <input type="text" class="form-control" placeholder="Pierwszy gracz" name="first_player" style="margin-bottom: 20px;" />
-                        <input type="text" class="form-control" placeholder="Drugi gracz" name="second_player" style="margin-bottom: 20px;" />
-                        <p><button class='profile_view_button' name='add_group'>Dodaj grupę</button></p>
+                        <input type="text" class="form-control" placeholder="Group name" name="group_name" style="margin-bottom: 20px;" />
+                        <input type="text" class="form-control" placeholder="First player" name="first_player" style="margin-bottom: 20px;" />
+                        <input type="text" class="form-control" placeholder="Second player" name="second_player" style="margin-bottom: 20px;" />
+                        <p><button class='profile_view_button' name='add_group'>Add new group</button></p>
                         <?php
                         if (isset($_GET['add_group'])) {
                             $first = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bridgeplayers WHERE user = "' . $_GET['first_player'] . '"'));
@@ -79,14 +79,14 @@ if ($_SESSION['role'] != 2) {
 
                             mysqli_query($con, "INSERT INTO `training_groups`(`id_group`, `id_trainer`, `id_first_player`, `id_second_player`, `group_name`) 
                                                     VALUES (0," . $_SESSION['id'] . "," . $first['id'] . "," . $second['id'] . ",'" . $_GET['group_name'] . "')");
-                            echo "Dodano grupę!";
+                            echo "Group added!";
                         }
                         ?>
                     </form>
                 </div>
 
                 <div style="margin-top: 50px;">
-                    <p style="font-size: 32px; color: rgb(253, 197, 124); margin-top: 20px; margin-bottom: 20px; text-align:center;">Moje grupy treningowe</p>
+                    <p style="font-size: 32px; color: rgb(253, 197, 124); margin-top: 20px; margin-bottom: 20px; text-align:center;">My training groups</p>
 
                     <div id="group_table" style="margin: auto;">
                         <?php get_group_table(); ?>

@@ -65,7 +65,7 @@ function search_test($set, $friend)
 								<h4
 									class='card-title font-weight-bold text-capitalize'
 								>
-									Test " . $test_number . "
+									Problem " . $test_number . "
 								</h4>
 								<p class='card-text'>
 									Points $points/$d[0] 
@@ -90,7 +90,7 @@ function search_test($set, $friend)
                           <h4
                             class='card-title font-weight-bold text-capitalize'
                           >
-                            Test " . $test_number . "
+                            Problem " . $test_number . "
                           </h4>
                           <p class='card-text'>
                           </p>

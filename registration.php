@@ -8,12 +8,12 @@ if (isset($_POST['user'])) {
     $user = $_POST['user'];
     if ((strlen($user) < 3) || (strlen($user) > 20)) {
         $is_good = false;
-        $_SESSION['error_user'] = "Nazwa użytkownika musi zawierać od 3 do 20 znaków.";
+        $_SESSION['error_user'] = "The username must contain between 3 and 20 characters.";
     }
 
     if (ctype_alnum($user) == false) {
         $is_good = false;
-        $_SESSION['error_user'] = "Nazwa użytkownika może zawierać jedynie litery (bez polskich znaków) i cyfry.";
+        $_SESSION['error_user'] = "The username can only contain letters (without non-english characters) and numbers.";
     }
 
     //checking email
@@ -22,7 +22,7 @@ if (isset($_POST['user'])) {
 
     if ((filter_var($save_email, FILTER_VALIDATE_EMAIL) == false) || ($save_email != $email)) {
         $is_good = false;
-        $_SESSION['error_email'] = "Niepoprawny adres email";
+        $_SESSION['error_email'] = "Incorrect email address";
     }
 
     //checking password
@@ -31,12 +31,12 @@ if (isset($_POST['user'])) {
 
     if ((strlen($password_one) < 8) || (strlen($password_one) > 20)) {
         $is_good = false;
-        $_SESSION['error_password'] = "Hasło musi zawierać od 8 do 20 znaków.";
+        $_SESSION['error_password'] = "The password must contain between 8 and 20 characters.";
     }
 
     if ($password_one != $password_two) {
         $is_good = false;
-        $_SESSION['error_password'] = "Hasła muszą być identyczne.";
+        $_SESSION['error_password'] = "Passwords must be identical.";
     }
 
     $hashed_password = password_hash($password_one, PASSWORD_DEFAULT);
@@ -44,7 +44,7 @@ if (isset($_POST['user'])) {
     //checking rules box
     if (!isset($_POST['rules'])) {
         $is_good = false;
-        $_SESSION['error_rules'] = "Zaakceptuj regulamin.";
+        $_SESSION['error_rules'] = "Accept the terms.";
     }
 
     //checking humanity
@@ -54,7 +54,7 @@ if (isset($_POST['user'])) {
 
     if ($response->success == false) {
         $is_good = false;
-        $_SESSION['error_humanity'] = "Wykryto boota";
+        $_SESSION['error_humanity'] = "Boot detected";
     }
 
     require_once "connect.php";

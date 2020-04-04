@@ -68,26 +68,26 @@ if (!isset($_SESSION['is_logged'])) {
       $user_pass = $row['pass'];
       ?>
       <div class="col-sm-8">
-        <h2 style="color: rgb(247, 109, 109); margin-top: 20px; margin-left: 70px;">Zmień hasło</h2>
+        <h2 style="color: rgb(247, 109, 109); margin-top: 20px; margin-left: 70px;">Change password</h2>
         <form action="" method="post" class="settings_form" enctype="multipart/form-data">
           <table>
 
             <tr>
-              <td style="font-weight: bold;">Bieżące hasło</td>
+              <td style="font-weight: bold;">Current password</td>
               <td>
                 <input class="form-control" type="password" name="current_pass" id="mypass" required="required" placeholder="Bieżące hasło" />
               </td>
             </tr>
 
             <tr>
-              <td style="font-weight: bold;">Nowe hasło</td>
+              <td style="font-weight: bold;">New password</td>
               <td>
                 <input class="form-control" type="password" name="u_pass1" id="mypass" required="required" placeholder="Nowe hasło" />
               </td>
             </tr>
 
             <tr>
-              <td style="font-weight: bold;">Powtórz nowe hasło</td>
+              <td style="font-weight: bold;">Repeat new password</td>
               <td>
                 <input class="form-control" type="password" name="u_pass2" id="mypass" required="required" placeholder="Powtórz nowe hasło" />
               </td>
