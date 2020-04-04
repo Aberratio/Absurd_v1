@@ -302,6 +302,11 @@ body {
     padding-left: 70px; }
   .option .col .card-desc {
     padding-left: 70px !important; } }
+.comments_text_area {
+  color: #263f31;
+  border: 0.5px solid #263f31;
+  box-shadow: 0 0.5px 0 0 #263f31; }
+
 #bidding {
   float: left;
   width: 600px;
