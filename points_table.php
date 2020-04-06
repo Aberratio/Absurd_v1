@@ -185,9 +185,9 @@ if (!isset($_SESSION['is_logged'])) {
 
                                                 // unset($_POST);
 
-                                                header('Location: points_table.php?biddingtest=$test_id&
-                                                biddingset=$set_id&test_main_id=$test_main_id&test_number=$test_number&friend=$friend');
-                                                exit;
+                                                // header('Location: points_table.php?biddingtest=$test_id&
+                                                // biddingset=$set_id&test_main_id=$test_main_id&test_number=$test_number&friend=$friend');
+                                                // exit;
                                             }
                                             ?>
                                         </form>
