@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include("connect.php");
+
 if (!isset($_SESSION['is_logged'])) {
     header('Location: index.php');
     exit();
@@ -275,7 +277,6 @@ $steps = 0;
 
                         <?php
 
-                        $con = mysqli_connect("sql8.netmark.pl", "filipmar_asia", "asia123", "filipmar_asia") or die("Connection was not established");
                         global $con;
 
                         $get_user = 'SELECT * FROM bridgeplayers RIGHT JOIN training_groups ON id = id_second_player WHERE id_first_player = ' . $_SESSION["id"] . ' or id_second_player = ' . $_SESSION["id"] . '';

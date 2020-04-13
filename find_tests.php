@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("sql8.netmark.pl", "filipmar_asia", "asia123", "filipmar_asia") or die("Connection was not established");
+include("connect.php");
 
 function search_test($set, $friend)
 {

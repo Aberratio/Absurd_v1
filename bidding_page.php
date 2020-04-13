@@ -3,6 +3,7 @@ session_start();
 include("get_test_details.php");
 include("get_next_bidding_page.php");
 include("get_comments.php");
+include("connect.php");
 
 $test_id = $_GET['biddingtest'];
 $set_id = $_GET['biddingset'];
@@ -169,8 +170,6 @@ if (!isset($_SESSION['is_logged'])) {
                                                 <button class='btn btn-secondary text-decoration-none text-white btn-block' type="submit" value="Submit" name="add_comment">Send comment</button>
                                             </div>
                                             <?php
-
-                                            $con = mysqli_connect("sql8.netmark.pl", "filipmar_asia", "asia123", "filipmar_asia") or die("Connection was not established");
 
                                             if (isset($_POST['add_comment'])) {
                                                 mysqli_query($con, 'INSERT INTO comments (`id_comment`, `id_player_test`, `id_player`, `comment_date`, `comment`) 
