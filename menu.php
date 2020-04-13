@@ -165,7 +165,7 @@ $steps = 0;
                                 }
                                 ?>
                                 <!-- ADD TESTS-->
-                                <?php if ($_SESSION['role'] == 1 or $_SESSION['role'] == 2) {
+                                <?php if ($_SESSION['role'] == 1) {
                                     echo "
 
                                     <div class='card mb-4'>
@@ -179,6 +179,34 @@ $steps = 0;
                                             <div class='card-block px-2'>
                                                 <h4 class='card-title font-weight-bold text-capitalize'>
                                                     Add tests
+                                                </h4>
+                                                <p class='card-text'>
+                                                    Create a new set and add your own tests. 
+                                                    You can also edit old sets.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>";
+                                }
+                                ?>
+
+
+                                <!-- TOURNAMENT GENERATOR-->
+                                <?php if ($_SESSION['role'] == 1) {
+                                    echo "
+
+                                    <div class='card mb-4'>
+                                    <div class='row no-gutters mt-2'>
+                                        <div class='col-auto'>
+                                            <a href='folder_view.php' class='d-block'>
+                                                <i class='fas fa-plus-square fa-6x m-3'></i>
+                                            </a>
+                                        </div>
+                                        <div class='col ml-1'>
+                                            <div class='card-block px-2'>
+                                                <h4 class='card-title font-weight-bold text-capitalize'>
+                                                Tournament generator
                                                 </h4>
                                                 <p class='card-text'>
                                                     Create a new set and add your own tests. 
