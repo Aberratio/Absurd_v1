@@ -289,6 +289,11 @@ body {
     border-right-width: 14px;
     left: -14px;
     right: auto; } }
+.comments_text_area {
+  color: #263f31;
+  border: 0.5px solid #263f31;
+  box-shadow: 0 0.5px 0 0 #263f31; }
+
 .profile_picture {
   border: 2px solid #000;
   border-radius: 5%;
@@ -302,11 +307,6 @@ body {
     padding-left: 70px; }
   .option .col .card-desc {
     padding-left: 70px !important; } }
-.comments_text_area {
-  color: #263f31;
-  border: 0.5px solid #263f31;
-  box-shadow: 0 0.5px 0 0 #263f31; }
-
 #bidding {
   float: left;
   width: 600px;
@@ -483,4 +483,4 @@ body {
     #main-footer {
       visibility: hidden; } }
 
-/*# sourceMappingURL=style2.css.map */
+/*# sourceMappingURL=style.css.map */

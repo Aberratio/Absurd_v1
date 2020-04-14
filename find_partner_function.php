@@ -1,4 +1,5 @@
 <?php
+
 include("connect.php");
 
 function search_user($user_name, $type)

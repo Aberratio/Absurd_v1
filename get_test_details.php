@@ -1,4 +1,5 @@
 <?php
+
 include("connect.php");
 
 function get_hand($test)

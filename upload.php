@@ -17,7 +17,7 @@ if (!isset($_SESSION['is_logged'])) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/bootstrap.css" />
-        <link rel="stylesheet" href="css/style2.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <title>Absurd - Bridge Platform</title>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -87,7 +87,6 @@ if (!isset($_SESSION['is_logged'])) {
                                                     <img class='profile_picture' src='<?php echo $user_profile; ?>'>
 
                                                     <form method='post' enctype='multipart/form-data' class="mt-2">
-
                                                         <div id='update_profile'>
                                                             <input type='file' name='u_image' size='60' />
                                                         </div>

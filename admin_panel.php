@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("get_training_groups.php");
+include("connect.php");
 
 if (!isset($_SESSION['is_logged'])) {
     header('Location: index.php');
@@ -22,7 +23,7 @@ if ($_SESSION['role'] == 3) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Absurd - Bridge Platform</title>
 
     <script type="text/javascript" src="js/add_test.js">

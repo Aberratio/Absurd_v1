@@ -7,7 +7,7 @@ if (!isset($_SESSION['is_logged'])) {
     exit();
 }
 
-if ($_SESSION['role'] != 2) {
+if ($_SESSION['role'] == 3) {
     header('Location: menu.php');
     exit();
 }
@@ -22,7 +22,7 @@ if ($_SESSION['role'] != 2) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Absurd - Bridge Platform</title>
 
     <script type="text/javascript" src="js/add_test.js">
@@ -74,7 +74,7 @@ if ($_SESSION['role'] != 2) {
                                 <thead>
                                     <tr>
                                         <th scope="col">Group</th>
-                                        <th scope="col">Add sets</th>
+                                        <th scope="col">Add folder</th>
                                         <th scope="col">Progress</th>
                                     </tr>
                                 </thead>
@@ -82,7 +82,6 @@ if ($_SESSION['role'] != 2) {
                                     <?php get_group_table(); ?>
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
 
@@ -139,7 +138,5 @@ if ($_SESSION['role'] != 2) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
-
-</html>
 
 </html>

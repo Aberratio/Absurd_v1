@@ -1,5 +1,6 @@
 <?php
 include("get_test_details.php");
+
 include("connect.php");
 
 function get_ranking_table()

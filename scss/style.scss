@@ -34,7 +34,6 @@ h4 {
     font-size: 1.3rem;
   }
 }
-
 body {
   background: #263f31;
   color: #000;
@@ -253,7 +252,6 @@ body {
 .prev_nex_btn {
   width: 100px;
 }
-
 //CHAT
 
 .timeline {
@@ -390,6 +388,13 @@ body {
   }
 }
 
+//Textareas
+.comments_text_area {
+  color: #263f31;
+  border: 0.5px solid #263f31;
+  box-shadow: 0 0.5px 0 0 #263f31;
+}
+
 //Pictures
 .profile_picture {
   border: 2px solid #000;
@@ -412,13 +417,6 @@ body {
       }
     }
   }
-}
-
-//Textareas
-.comments_text_area {
-  color: #263f31;
-  border: 0.5px solid #263f31;
-  box-shadow: 0 0.5px 0 0 #263f31;
 }
 
 //BIDDING

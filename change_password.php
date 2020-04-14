@@ -20,7 +20,7 @@ if (!isset($_SESSION['is_logged'])) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/style2.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <title>Absurd - Bridge Platform</title>
 </head>
 
@@ -64,7 +64,6 @@ if (!isset($_SESSION['is_logged'])) {
       $get_user = "select * from bridgeplayers where email='$user'";
       $run_user = mysqli_query($con, $get_user);
       $row = mysqli_fetch_array($run_user);
-
       $user_pass = $row['pass'];
       ?>
       <div class="col-sm-8">

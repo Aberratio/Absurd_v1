@@ -94,22 +94,21 @@ function start() {
 
 var odd = true;
 var last_bidded_index = [-1];
-//var last_bid = -1;
-
-var to_send = 0;
 
 function declare(bid_index) {
   if (
     document.getElementById("turn").innerText ==
     document.getElementById("hand").innerText
   ) {
-    bidding_string_value = bidding_string_value + ";" + bid_index;
-    document.getElementById("new_bidding_string").value = bidding_string_value;
+    document.getElementById("undo_button").style.background = "#313131";
+    document.getElementById("undo_button").style.cursor = "default";
+    if (bid_index != 38) {
+      bidding_string_value = bidding_string_value + ";" + bid_index;
+      document.getElementById(
+        "new_bidding_string"
+      ).value = bidding_string_value;
 
-    to_send = 0;
-    write_bid(bid_index);
-
-    if (to_send >= 1) {
+      write_bid(bid_index);
       myButton = document.getElementById("send_button");
       myButton.type = "submit";
 
@@ -119,8 +118,27 @@ function declare(bid_index) {
         document.getElementById("turn").innerHTML = "N";
       }
     }
-  } else {
-    //alert("nierowne!" + document.getElementById("turn").innerText + "nierowne!" + document.getElementById("hand").innerText + "nierowne!");
+  } else if (
+    bid_index == 38 &&
+    document.getElementById("undo_button").style.cursor != "default" &&
+    bidding_string_value.length > 2
+  ) {
+    document.getElementById(
+      "new_bidding_string"
+    ).value = bidding_string_value.slice(
+      0,
+      bidding_string_value.lastIndexOf(";")
+    );
+
+    write_bid(bid_index);
+    myButton = document.getElementById("send_button");
+    myButton.type = "submit";
+
+    if (document.getElementById("turn").innerText == "N") {
+      document.getElementById("turn").innerHTML = "S";
+    } else {
+      document.getElementById("turn").innerHTML = "N";
+    }
   }
 }
 
@@ -132,7 +150,6 @@ function write_bid(bid_index) {
         .getElementById("bid" + bid_index)
         .style.getPropertyValue("background") != "rgb(49, 49, 49)"
     ) {
-      to_send = 1;
       if (bid_index <= 34) {
         for (i = 0; i <= bid_index; i++) {
           var element = "bid" + i;
@@ -182,7 +199,6 @@ function write_bid(bid_index) {
           bid_element = "&#10060;&#10060;";
         } else {
           bid_element = declaration[bid_index];
-          //  last_bid = bid_index;
         }
 
         if (odd) {

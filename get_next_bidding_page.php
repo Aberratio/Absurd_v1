@@ -1,4 +1,5 @@
 <?php
+
 include("connect.php");
 
 function get_previous_bidding_page($test_number, $test, $friend)

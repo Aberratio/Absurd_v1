@@ -1,8 +1,8 @@
 <?php
 session_start();
 include("get_test_details.php");
-include("get_next_bidding_page.php");
 include("get_comments.php");
+include("get_next_bidding_page.php");
 include("connect.php");
 
 $test_id = $_GET['biddingtest'];
@@ -25,10 +25,10 @@ if (!isset($_SESSION['is_logged'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Absurd - Bridge Platform</title>
 
-    <script type="text/javascript" src="js/biddingbox2.js">
+    <script type="text/javascript" src="js/biddingbox.js">
 
     </script>
 </head>
@@ -175,13 +175,9 @@ if (!isset($_SESSION['is_logged'])) {
                                                 mysqli_query($con, 'INSERT INTO comments (`id_comment`, `id_player_test`, `id_player`, `comment_date`, `comment`) 
                                                 VALUES (0, ' . $test_id . ', ' . $_SESSION['id'] . ', "' . date('Y-m-d H:i:s') . '", "' . $_POST['comment'] . '")');
 
-                                                // $_POST = array();
 
-                                                // unset($_POST);
-
-                                                // header('Location: points_table.php?biddingtest=$test_id&
-                                                // biddingset=$set_id&test_main_id=$test_main_id&test_number=$test_number&friend=$friend');
-                                                // exit;
+                                                // header('Location: points_table.php?biddingtest=' . $test_id . '&
+                                                // biddingset=' . $set_id . '&test_main_id=' . $test_main_id . '&test_number=' . $test_number . '&friend=' . $friend . '');
                                             }
                                             ?>
                                         </form>
@@ -198,6 +194,7 @@ if (!isset($_SESSION['is_logged'])) {
                 </div>
             </div>
         </div>
+
 
         <!-- FOOTER -->
 
