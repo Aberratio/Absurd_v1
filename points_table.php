@@ -98,17 +98,13 @@ if (!isset($_SESSION['is_logged'])) {
                                                     <p class='card-text'>
                                                         <?php get_both_hands($test_id); ?>
                                                     </p>
-
-                                                    <div id="points_table" style="float: left;">
-                                                        <?php get_points_table($test_id); ?>
-                                                    </div>
                                                 </div>
-
                                             </div>
 
                                         </div>
                                         <div style="clear: both;"> </div>
 
+                                        <!-- OUR BIDDING -->
                                         <div id="bidding" style="float:left; margin-top: 50px;">
                                             <p>Our bidding</p>
                                             <table id="bidding_desk">
@@ -120,6 +116,13 @@ if (!isset($_SESSION['is_logged'])) {
                                             </table>
                                             <div id="bidding_string"><?php get_bidding($test_id); ?></div>
                                         </div>
+                                        <!-- END OUR BIDDING -->
+
+                                        <!-- POINTS TABLE -->
+                                        <div id="points_table" style="float: left;">
+                                            <?php get_points_table($test_id); ?>
+                                        </div>
+                                        <!-- END POINTS TABLE -->
 
                                         <div id="bidding" style="float:left; margin-top: 50px;">
 
@@ -135,14 +138,11 @@ if (!isset($_SESSION['is_logged'])) {
                                                         <button type=" submit" class="biddingbox_bottom_button" onclick="declare(36)">PASS</button>
                                                     <button type="submit" class="biddingbox_bottom_button"">&#10060;&#10060;</button> <!-- blue XX--> 
                                                         <button type=" submit" class="biddingbox_bottom_button biddingbox_bottom_button_back" onclick="declare(38)">&#128584;</button>
-
                                                 </div>
                                                 <?php update_player_bidding($test_id, $friend); ?>
                                             </div>
                                             <div style="clear: both;"> </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                                 <!-- POINTS PAGE END-->
@@ -180,7 +180,6 @@ if (!isset($_SESSION['is_logged'])) {
                                             if (isset($_POST['add_comment'])) {
                                                 mysqli_query($con, 'INSERT INTO comments (`id_comment`, `id_player_test`, `id_player`, `comment_date`, `comment`) 
                                                 VALUES (0, ' . $test_id . ', ' . $_SESSION['id'] . ', "' . date('Y-m-d H:i:s') . '", "' . $_POST['comment'] . '")');
-
 
                                                 // header('Location: points_table.php?biddingtest=' . $test_id . '&
                                                 // biddingset=' . $set_id . '&test_main_id=' . $test_main_id . '&test_number=' . $test_number . '&friend=' . $friend . '');
