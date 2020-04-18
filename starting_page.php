@@ -24,7 +24,7 @@ if (!isset($_SESSION['is_registred'])) {
     <meta name="author" content="Joanna Kokot">
 
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style3.css" />
 </head>
 
 <body>

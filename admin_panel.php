@@ -23,7 +23,7 @@ if ($_SESSION['role'] == 3) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style3.css" />
     <title>Absurd - Bridge Platform</title>
 
     <script type="text/javascript" src="js/add_test.js">
@@ -52,7 +52,7 @@ if ($_SESSION['role'] == 3) {
                 </li>
                 <li class="nav-item">
                     <img class='profile_picture_nav' src='<?php echo $_SESSION['profile_picture']; ?>'>
-                    <i style="color:white;"><?php echo $_SESSION['user']; ?></i>
+                    <i style3="color:white;"><?php echo $_SESSION['user']; ?></i>
                 </li>
                 <li class="nav-item">
                     <a class="text-decoration-none text-light" href="logout.php">Log Out</a>
@@ -65,12 +65,12 @@ if ($_SESSION['role'] == 3) {
 
     <main>
 
-        <div style="margin-top: 50px; margin-left: 50px; font-size:18px;">
-            <div style="float: left; display:inline-block;">
+        <div style3="margin-top: 50px; margin-left: 50px; font-size:18px;">
+            <div style3="float: left; display:inline-block;">
                 <form name='add_test' method='post'>
                     <div class="form-group">
                         <label for="x">Nazwa zestawu <input class="form-control" type='text' name="set_name" /> </label>
-                        <label style="padding-left: 10px;"> Nowy zestaw? <input type='checkbox' name="new_set" /></label>
+                        <label style3="padding-left: 10px;"> Nowy zestaw? <input type='checkbox' name="new_set" /></label>
                     </div>
                     <div class="form-group">
                         <label for="x">Punkty <input class="form-control" type='text' id='points_input' name='points_input' /></label>
@@ -102,7 +102,7 @@ if ($_SESSION['role'] == 3) {
                 </form>
             </div>
 
-            <div id="brigde_table" style="float: left; display:inline-block; margin-left: 100px;">
+            <div id="brigde_table" style3="float: left; display:inline-block; margin-left: 100px;">
                 <div id="biddingbox">
                     <div id="biddingbox_top">
                     </div>
@@ -116,7 +116,7 @@ if ($_SESSION['role'] == 3) {
             </div>
         </div>
 
-        <div id="view-panel" style="float: left">
+        <div id="view-panel" style3="float: left">
             <?php
             echo '
             <form name="add">

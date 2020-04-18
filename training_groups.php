@@ -22,7 +22,7 @@ if ($_SESSION['role'] == 3) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style3.css" />
     <title>Absurd - Bridge Platform</title>
 
     <script type="text/javascript" src="js/add_test.js">
@@ -108,9 +108,14 @@ if ($_SESSION['role'] == 3) {
                                 $first = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bridgeplayers WHERE user = "' . $_GET['first_player'] . '"'));
                                 $second = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bridgeplayers WHERE user = "' . $_GET['second_player'] . '"'));
 
-                                mysqli_query($con, "INSERT INTO `training_groups`(`id_group`, `id_trainer`, `id_first_player`, `id_second_player`, `group_name`) 
-                                                    VALUES (0," . $_SESSION['id'] . "," . $first['id'] . "," . $second['id'] . ",'" . $_GET['group_name'] . "')");
-                                echo "Group Added!";
+                                $counter =  mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) FROM training_groups WHERE id_trainer = " . $_SESSION['id'] . " AND (id_first_player = " . $first['id'] . " OR id_second_player = " . $first['id'] . ") AND (id_first_player = " . $second['id'] . " OR id_second_player = " . $second['id'] . ") "));
+
+                                if ($counter[0] == 0) {
+                                    mysqli_query($con, "INSERT INTO `training_groups`(`id_group`, `id_trainer`, `id_first_player`, `id_second_player`, `group_name`) 
+                                    VALUES (0," . $_SESSION['id'] . "," . $first['id'] . "," . $second['id'] . ",'" . $_GET['group_name'] . "')");
+
+                                    echo "Group Added!";
+                                }
                             }
                             ?>
                         </form>
@@ -121,6 +126,8 @@ if ($_SESSION['role'] == 3) {
         </div>
 
     </div>
+
+    <!-- FOOTER -->
 
     <!-- FOOTER -->
 

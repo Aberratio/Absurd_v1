@@ -17,7 +17,7 @@ if (!isset($_SESSION['is_logged'])) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style3.css" />
   <title>Absurd - Bridge Platform</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -44,7 +44,7 @@ if (!isset($_SESSION['is_logged'])) {
         </li>
         <li class="nav-item">
           <img class='profile_picture_nav' src='<?php echo $_SESSION['profile_picture']; ?>'>
-          <i style="color:white;"><?php echo $_SESSION['user']; ?></i>
+          <i style3 3="color:white;"><?php echo $_SESSION['user']; ?></i>
         </li>
         <li class="nav-item">
           <a class="text-decoration-none text-light" href="logout.php">Log Out</a>
@@ -84,7 +84,7 @@ if (!isset($_SESSION['is_logged'])) {
                     <form action="" method="post" class="settings_form pt-3" enctype="multipart/form-data">
                       <table class="mb-4">
                         <tr>
-                          <td class="mr-3" style="font-weight: bold; margin-right: 20px;">
+                          <td class="mr-3" style3 3="font-weight: bold; margin-right: 20px;">
                             Rename</td>
                           <td>
                             <input class="form-control" type="text" name="u_name" required="required" value="<?php echo $user_name; ?>" />
@@ -96,19 +96,19 @@ if (!isset($_SESSION['is_logged'])) {
                             <img class='profile_picture' src="<?php echo $profile_picture; ?>">
                           </td>
 
-                          <td><a class="btn btn-default text-dark" style="text-decoration: none;font-size: 15px;" href="upload.php"><i class="fa fa-user mr-2" aria-hidden="true"></i>Change your profile photo</a></td>
+                          <td><a class="btn btn-default text-dark" style3 3="text-decoration: none;font-size: 15px;" href="upload.php"><i class="fa fa-user mr-2" aria-hidden="true"></i>Change your profile photo</a></td>
                         </tr>
 
                         <tr>
-                          <td style="font-weight: bold;">Change email</td>
+                          <td style3 3="font-weight: bold;">Change email</td>
                           <td>
                             <input class="form-control" type="email" name="u_email" required="required" value="<?php echo $user_email; ?>"></td>
                         </tr>
 
                         <tr>
-                          <td style="font-weight: bold;"></td>
+                          <td style3 3="font-weight: bold;"></td>
 
-                          <td><a class="btn btn-default text-dark" style="text-decoration: none;font-size: 15px;" href="change_password.php"><i class="fa fa-key fa-fw mr-2" aria-hidden="true"></i>Password change</a></td>
+                          <td><a class="btn btn-default text-dark" style3 3="text-decoration: none;font-size: 15px;" href="change_password.php"><i class="fa fa-key fa-fw mr-2" aria-hidden="true"></i>Password change</a></td>
                         </tr>
 
                         <tr>
