@@ -3,6 +3,7 @@ session_start();
 include("find_tests.php");
 include("get_comp_test.php");
 include("connect.php");
+include("get_ranking.php");
 
 if (!isset($_SESSION['is_logged'])) {
     header('Location: index.php');
@@ -67,6 +68,7 @@ $con = mysqli_connect($host, $db_user, $db_password, $db_name) or die("Connectio
 $x = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bidding_sets join player_bidding_sets on bidding_sets.id_set = player_bidding_sets.id_set WHERE id_player_sets = ' . $_GET["set"] . ''));
 echo $x['set_name']; ?></div>
 
+
 <body>
     <div class="site-container">
         <div class="row mb-5 mt-5">
@@ -115,35 +117,11 @@ echo $x['set_name']; ?></div>
                 <div class="container mt-5">
                     <div class="card">
                         <h4 class="d-block text-center py-2 mt-2 mx-3 text-capitalize">
-                            News
+                            Set Ranking
                         </h4>
-                        <hr class="hr-dark py-3" />
 
-                        <div class="card mx-auto mb-3 border-danger mb-3" style="max-width: 18rem;">
-                            <div class="card-body text-danger">
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make
-                                    up the bulk of the card's content.
-                                </p>
-                            </div>
-                        </div>
+                        <?php get_ranking_set_table($x['id_set'], $x['max_points']); ?>
 
-                        <div class="card mx-auto mb-3 border-warning mb-3" style="max-width: 18rem;">
-                            <div class="card-body text-warning">
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make
-                                    up the bulk of the card's content.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card mx-auto mb-3 border-info mb-3" style="max-width: 18rem;">
-                            <div class="card-body text-info">
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make
-                                    up the bulk of the card's content.
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
