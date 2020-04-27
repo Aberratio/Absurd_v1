@@ -29,7 +29,7 @@ if ($_SESSION['role'] == 3) {
     <script type="text/javascript" src="js/add_test.js">
 
     </script>
-    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
 </head>
 
 <!-- NAVBAR -->
@@ -52,7 +52,7 @@ if ($_SESSION['role'] == 3) {
                 </li>
                 <li class="nav-item">
                     <img class='profile_picture_nav' src='<?php echo $_SESSION['profile_picture']; ?>'>
-                    <i style3="color:white;"><?php echo $_SESSION['user']; ?></i>
+                    <i style="color:white;"><?php echo $_SESSION['user']; ?></i>
                 </li>
                 <li class="nav-item">
                     <a class="text-decoration-none text-light" href="logout.php">Log Out</a>
@@ -65,12 +65,12 @@ if ($_SESSION['role'] == 3) {
 
     <main>
 
-        <div style3="margin-top: 50px; margin-left: 50px; font-size:18px;">
-            <div style3="float: left; display:inline-block;">
+        <div style="margin-top: 50px; margin-left: 50px; font-size:18px;">
+            <div style="float: left; display:inline-block;">
                 <form name='add_test' method='post'>
                     <div class="form-group">
                         <label for="x">Nazwa zestawu <input class="form-control" type='text' name="set_name" /> </label>
-                        <label style3="padding-left: 10px;"> Nowy zestaw? <input type='checkbox' name="new_set" /></label>
+                        <label style="padding-left: 10px;"> Nowy zestaw? <input type='checkbox' name="new_set" /></label>
                     </div>
                     <div class="form-group">
                         <label for="x">Punkty <input class="form-control" type='text' id='points_input' name='points_input' /></label>
@@ -88,21 +88,22 @@ if ($_SESSION['role'] == 3) {
                     <?php
                     if (isset($_POST['add_test'])) {
                         if (isset($_POST['new_set'])) {
-                            mysqli_query($con, 'INSERT INTO `bidding_sets`(`id_set`, `set_name`, `set_type`) VALUES (0,"' . $_POST['set_name'] . '",0)');
+                            mysqli_query($con, 'INSERT INTO `bidding_sets`(`id_set`, `id_folder`, `set_name`, `set_type`, `max_points`) VALUES (0, 2,"' . $_POST['set_name'] . '",0, 1000)');
                         }
 
                         $set_id = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bidding_sets WHERE set_name = "' . $_POST['set_name'] . '"'));
-                        $test_counter = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bidding_tests WHERE set_name = "' . $_POST['set_name'] . '"'));
+                        $test_counter = mysqli_fetch_array(mysqli_query($con, 'SELECT COUNT(*) FROM bidding_tests JOIN bidding_sets ON bidding_tests.id_set = bidding_sets.id_set WHERE set_name = "' . $_POST['set_name'] . '"'));
+                        $test_number = $test_counter[0] + 1;
 
-                        mysqli_query($con, 'INSERT INTO `bidding_tests`(`id_test`, `level`, `S_hand`, `N_hand`, `point_string`, `id_set`, `declarer`) 
-                    VALUES (0,1,"' . $_POST['S_hand'] . '","' . $_POST['N_hand'] . '","' . $_POST['points_input'] . '",' . $set_id["id_set"] . ',2)');
+                        mysqli_query($con, 'INSERT INTO `bidding_tests`(`id_test`, `level`, `S_hand`, `N_hand`, `point_string`, `id_set`, `declarer`, `test_number`) 
+                             VALUES (0,1,"' . $_POST['S_hand'] . '","' . $_POST['N_hand'] . '","' . $_POST['points_input'] . '",' . $set_id["id_set"] . ',2, ' . $test_number . ')');
                         echo "Dodano nowy test!";
                     }
                     ?>
                 </form>
             </div>
 
-            <div id="brigde_table" style3="float: left; display:inline-block; margin-left: 100px;">
+            <div id="brigde_table" style="float: left; display:inline-block; margin-left: 100px;">
                 <div id="biddingbox">
                     <div id="biddingbox_top">
                     </div>
@@ -116,12 +117,12 @@ if ($_SESSION['role'] == 3) {
             </div>
         </div>
 
-        <div id="view-panel" style3="float: left">
+        <div id="view-panel" style="float: left">
             <?php
             echo '
-            <form name="add">
-            <select id="sets" name="sets">
-                ';
+                    <form name="add">
+                    <select id="sets" name="sets">
+                        ';
             $get_set_query = 'SELECT * from bidding_sets';
 
             $run_sets = mysqli_query($con, $get_set_query);
@@ -131,13 +132,13 @@ if ($_SESSION['role'] == 3) {
                 $set_id = $row_comparetest['id_set'];
 
                 echo '
-                    <option value="' . $set_id . '" set_name="' . $set_id . '">' . $set_name . '</option>';
+                            <option value="' . $set_id . '" set_name="' . $set_id . '">' . $set_name . '</option>';
             }
             echo '    
-            </select>
-            <input type="hidden" id="name" name="name" value=""/>
-            </form>
-        ';
+                    </select>
+                    <input type="hidden" id="name" name="name" value=""/>
+                    </form>
+                ';
             ?>
 
             <div>

@@ -65,7 +65,6 @@ function search_set_in_folder($friend_id, $type, $id_folder, $user_id)
 	while ($row_biddingset = mysqli_fetch_array($run_biddingset)) {
 		$biddingset = $row_biddingset['id_player_sets'];
 		$set_id = $row_biddingset['id_set'];
-		$level = $row_biddingset['level'];
 		$setname = $row_biddingset['set_name'];
 		$max = $row_biddingset['max_points'];
 
