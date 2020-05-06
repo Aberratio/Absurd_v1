@@ -14,52 +14,11 @@ if ($_SESSION['role'] == 3) {
 }
 ?>
 
-<!DOCTYPE HTML>
-<html lang="pl">
+<?php include 'templates/header.php'; ?>
+<?php include 'templates/navbar.php'; ?>
+<script type="text/javascript" src="js/add_test.js">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style3.css" />
-    <title>Absurd - Bridge Platform</title>
-
-    <script type="text/javascript" src="js/add_test.js">
-
-    </script>
-    <script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
-</head>
-
-<!-- NAVBAR -->
-
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top py-1">
-    <div class="container">
-        <a class="navbar-brand" href="menu.php">
-            <img src="img/logo_Asia_rev.png" alt="" width="50" height="50" />
-            <h3 class="d-inline align-middle">Absurd</h3>
-            <img src="img/logo_Domi_rev.png" alt="" width="50" height="50" />
-        </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <p class="text-light"> Points: <?php echo $_SESSION['player_points']; ?> </p>
-                </li>
-                <li class="nav-item">
-                    <img class='profile_picture_nav' src='<?php echo $_SESSION['profile_picture']; ?>'>
-                    <i style="color:white;"><?php echo $_SESSION['user']; ?></i>
-                </li>
-                <li class="nav-item">
-                    <a class="text-decoration-none text-light" href="logout.php">Log Out</a>
-                </li>
-        </div>
-    </div>
-</nav>
+</script>
 
 <body>
 
@@ -88,15 +47,14 @@ if ($_SESSION['role'] == 3) {
                     <?php
                     if (isset($_POST['add_test'])) {
                         if (isset($_POST['new_set'])) {
-                            mysqli_query($con, 'INSERT INTO `bidding_sets`(`id_set`, `id_folder`, `set_name`, `set_type`, `max_points`) VALUES (0, 2,"' . $_POST['set_name'] . '",0, 1000)');
+                            mysqli_query($con, 'INSERT INTO `bidding_sets`(`id_set`, `set_name`, `set_type`) VALUES (0,"' . $_POST['set_name'] . '",0)');
                         }
 
                         $set_id = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bidding_sets WHERE set_name = "' . $_POST['set_name'] . '"'));
-                        $test_counter = mysqli_fetch_array(mysqli_query($con, 'SELECT COUNT(*) FROM bidding_tests JOIN bidding_sets ON bidding_tests.id_set = bidding_sets.id_set WHERE set_name = "' . $_POST['set_name'] . '"'));
-                        $test_number = $test_counter[0] + 1;
+                        $test_counter = mysqli_fetch_array(mysqli_query($con, 'SELECT * FROM bidding_tests WHERE set_name = "' . $_POST['set_name'] . '"'));
 
-                        mysqli_query($con, 'INSERT INTO `bidding_tests`(`id_test`, `level`, `S_hand`, `N_hand`, `point_string`, `id_set`, `declarer`, `test_number`) 
-                             VALUES (0,1,"' . $_POST['S_hand'] . '","' . $_POST['N_hand'] . '","' . $_POST['points_input'] . '",' . $set_id["id_set"] . ',2, ' . $test_number . ')');
+                        mysqli_query($con, 'INSERT INTO `bidding_tests`(`id_test`, `level`, `S_hand`, `N_hand`, `point_string`, `id_set`, `declarer`) 
+                    VALUES (0,1,"' . $_POST['S_hand'] . '","' . $_POST['N_hand'] . '","' . $_POST['points_input'] . '",' . $set_id["id_set"] . ',2)');
                         echo "Dodano nowy test!";
                     }
                     ?>

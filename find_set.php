@@ -2,9 +2,11 @@
 
 include("connect.php");
 
-function search_for_folders($friend_id, $type, $user_id)
+
+function search_for_folders($friend_id, $type, $user_id, $infos)
 {
 	global $con;
+
 	$get_folders = 'SELECT * FROM player_folders JOIN folders ON folders.id_folder = player_folders.id_folder WHERE type = ' . $type . ' AND  (id_first_player = ' . $friend_id . ' OR id_first_player = ' . $user_id . ') AND (id_second_player = ' . $friend_id . ' OR id_second_player = ' . $user_id . ')';
 
 	$run_folders = mysqli_query($con, $get_folders);
@@ -33,10 +35,10 @@ function search_for_folders($friend_id, $type, $user_id)
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th scope="col">Name</th>
-							<th scope="col">Completed</th>
-							<th scope="col">Score</th>
-							<th scope="col">Comments</th>
+							<th scope="col">' . $infos->set_name . '</th>
+							<th scope="col">' . $infos->set_completed . '</th>
+							<th scope="col">' . $infos->score . '</th>
+							<th scope="col">' . $infos->comments . '</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -58,7 +60,7 @@ function search_set_in_folder($friend_id, $type, $id_folder, $user_id)
 	$get_biddingset = 'SELECT player_bidding_sets.*, bidding_sets.*
 		FROM player_bidding_sets JOIN bidding_sets ON player_bidding_sets.id_set = bidding_sets.id_set 
 		WHERE set_type = ' . $type . ' AND (player_bidding_sets.first_user = ' . $friend_id . ' OR player_bidding_sets.second_user = ' . $friend_id . ') AND 
-			(player_bidding_sets.first_user = ' . $user_id . ' OR player_bidding_sets.second_user = ' . $user_id . ') AND id_folder = ' . $id_folder . ' ORDER BY set_name;';
+			(player_bidding_sets.first_user = ' . $user_id . ' OR player_bidding_sets.second_user = ' . $user_id . ') AND id_folder = ' . $id_folder . ';';
 
 	$run_biddingset = mysqli_query($con, $get_biddingset);
 

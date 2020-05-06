@@ -47,6 +47,10 @@ if (isset($_POST['user'])) {
         $_SESSION['error_rules'] = "Accept the terms.";
     }
 
+
+    //saving language
+    $language = $_POST['language'];
+
     //checking humanity
     $secret_key = "6LcHc7wUAAAAADazqGqrLGVScTewI9ltumGnLLO6";
     $check = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $_POST['g-recaptcha-response']);
@@ -91,8 +95,8 @@ if (isset($_POST['user'])) {
 
             //everything ok
             if ($is_good == true) {
-                if ($db_connection->query("INSERT INTO bridgeplayers (`user`, `email`, `pass`, `cezar`, `profile_picture`, `player_points`, `role`) 
-                    VALUES ('$user', '$email', '$hashed_password', 0, 'img/profil.png', 0, 3)")) {
+                if ($db_connection->query("INSERT INTO bridgeplayers (`user`, `email`, `pass`, `cezar`, `profile_picture`, `player_points`, `role`, `language`) 
+                    VALUES ('$user', '$email', '$hashed_password', 0, 'img/profil.png', 0, 3, $language)")) {
                     $_SESSION['is_registred'] = true;
                     header('Location: starting_page.php');
                 }
@@ -183,6 +187,17 @@ if (isset($_POST['user'])) {
                         </div>
                         <input class="form-control" type="password" id="repeat_password" name="password2" placeholder="Repeat Password" />
                     </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text "><i class="fas fa-globe-americas"></i></span>
+                        </div>
+                        <select class="form-control" name="language">
+                            <option value='1'>English</option>
+                            <option value='0'>Polski</option>
+                        </select>
+                    </div>
+
                     <div class="input-group mb-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="rules" id="gridCheck" />

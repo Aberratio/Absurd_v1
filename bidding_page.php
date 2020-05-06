@@ -10,57 +10,30 @@ $set_id = $_GET['biddingset'];
 $test_number = $_GET['test_number'];
 $friend = $_GET['friend'];
 
+
+
+if ($_SESSION['language'] == 1) {
+    include("lang/lang_eng.php");
+} else {
+    include("lang/lang_pl.php");
+}
+
+$infos = new Infos();
+
+
 if (!isset($_SESSION['is_logged'])) {
     header('Location: index.php');
     exit();
 }
 ?>
 
-<!DOCTYPE HTML>
-<html lang="pl">
+<?php include 'templates/header.php'; ?>
+<?php include 'templates/navbar.php'; ?>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style3.css" />
-    <title>Absurd - Bridge Platform</title>
+<script type="text/javascript" src="js/biddingbox.js">
 
-    <script type="text/javascript" src="js/biddingbox.js">
+</script>
 
-    </script>
-</head>
-
-<!-- NAVBAR -->
-
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top py-1">
-    <div class="container">
-        <a class="navbar-brand" href="menu.php">
-            <img src="img/logo_Asia_rev.png" alt="" width="50" height="50" />
-            <h3 class="d-inline align-middle">Absurd</h3>
-            <img src="img/logo_Domi_rev.png" alt="" width="50" height="50" />
-        </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <p class="text-light"> Points: <?php echo $_SESSION['player_points']; ?> </p>
-                </li>
-                <li class="nav-item">
-                    <img class='profile_picture_nav' src='<?php echo $_SESSION['profile_picture']; ?>'>
-                    <i style="color:white;"><?php echo $_SESSION['user']; ?></i>
-                </li>
-                <li class="nav-item">
-                    <a class="text-decoration-none text-light" href="logout.php">Log Out</a>
-                </li>
-        </div>
-    </div>
-</nav>
 <!-- MENU -->
 
 <body>
@@ -73,7 +46,7 @@ if (!isset($_SESSION['is_logged'])) {
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
                             <ul class="pagination pagination-sm justify-content-between mb-0">
                                 <?php get_previous_bidding_page($test_number, $test_id, $friend); ?>
-                                <li>Problem <?php echo $test_number; ?></li>
+                                <li><?php echo $infos->problem . " " . $test_number; ?></li>
                                 <?php get_next_bidding_page($test_number, $test_id, $friend); ?>
                             </ul>
                         </h4>
@@ -83,9 +56,9 @@ if (!isset($_SESSION['is_logged'])) {
                                 <div class="card mb-4">
                                     <div class="row no-gutters mt-2">
                                         <a href='choose_bidding_test.php?type=0&set=<?php echo $set_id; ?>&friend=<?php echo $friend ?>' class='text-decoration-none ml-2 mb-2'>
-                                            <i class="fas fa-long-arrow-alt-left mr-2"></i> Back
+                                            <i class="fas fa-long-arrow-alt-left mr-2"></i> <?php echo $infos->back; ?>
                                         </a>
-                                        <div class='player_turn' style='width: 100%;'> Turn:
+                                        <div class='player_turn' style='width: 100%;'> <?php echo $infos->problem_turn; ?>:
                                             <b>
                                                 <div id="turn"><?php get_player($test_id); ?></div>
                                             </b>
@@ -151,7 +124,7 @@ if (!isset($_SESSION['is_logged'])) {
                 <div class="container mt-5">
                     <div class="card mt-2">
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
-                            Comments
+                            <?php echo $infos->comments; ?>
                         </h4>
                         <div class='card mb-4 ml-3 mr-3'>
                             <div class='row no-gutters mt-2'>
@@ -174,10 +147,6 @@ if (!isset($_SESSION['is_logged'])) {
                                             if (isset($_POST['add_comment'])) {
                                                 mysqli_query($con, 'INSERT INTO comments (`id_comment`, `id_player_test`, `id_player`, `comment_date`, `comment`) 
                                                 VALUES (0, ' . $test_id . ', ' . $_SESSION['id'] . ', "' . date('Y-m-d H:i:s') . '", "' . $_POST['comment'] . '")');
-
-
-                                                // header('Location: points_table.php?biddingtest=' . $test_id . '&
-                                                // biddingset=' . $set_id . '&test_main_id=' . $test_main_id . '&test_number=' . $test_number . '&friend=' . $friend . '');
                                             }
                                             ?>
                                         </form>

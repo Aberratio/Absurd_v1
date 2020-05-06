@@ -7,23 +7,7 @@ if ((isset($_SESSION['is_logged'])) && ($_SESSION['is_logged'] == true)) {
 }
 ?>
 
-<!DOCTYPE HTML>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://kit.fontawesome.com/fe0a0fefeb.js" crossorigin="anonymous"></script>
-
-    <title>Absurd - Bridge Platform</title>
-    <meta name="description" content="Strona do nauki gry w brydża">
-    <meta name="keywords" content="brydż, licytacja, rozgrywka, bridge, absurd">
-    <meta name="author" content="Joanna Kokot">
-
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style3.css" />
-</head>
+<?php include 'templates/header.php'; ?>
 
 <body>
     <div class="site-container">
@@ -81,7 +65,7 @@ if ((isset($_SESSION['is_logged'])) && ($_SESSION['is_logged'] == true)) {
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
