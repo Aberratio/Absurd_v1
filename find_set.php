@@ -13,24 +13,30 @@ function search_for_folders($friend_id, $type, $user_id, $infos)
 
 	while ($row_biddingset = mysqli_fetch_array($run_folders)) {
 		$id_folder = $row_biddingset['id_folder'];
-		$description = $row_biddingset['description'];
+		$folder_name = $row_biddingset['name'];
+		if ($infos->level == "Level") {
+			$description = $row_biddingset['description'];
+		} else {
+			$description = $row_biddingset['description_pl'];
+		}
+		$folder_level = $row_biddingset['folder_level'];
 
 		echo '
 		<div class="panel panel-default">
-			<div class="panel-heading" role="tab" id="headingOne">
+			<div class="panel-heading" role="tab" id="heading' . $id_folder . '">
 				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 				<h4 class="panel-title text-capitalize">
-					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-						First Step Into Absurd
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' . $id_folder . '" aria-expanded="false" aria-controls="collapse' . $id_folder . '">
+						' . $folder_name . '
 					</a>
 					<small class="text-info">
-						Level 2
+					' . $infos->level . ' ' . $folder_level . '
 					</small>
 				</h4>
 				<p>' . $description . '</p>
 			</div>
-		<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+		<div id="collapse' . $id_folder . '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' . $id_folder . '">
 			<div class="panel-body table-responsive">
 				<table class="table table-striped">
 					<thead>
@@ -60,7 +66,7 @@ function search_set_in_folder($friend_id, $type, $id_folder, $user_id)
 	$get_biddingset = 'SELECT player_bidding_sets.*, bidding_sets.*
 		FROM player_bidding_sets JOIN bidding_sets ON player_bidding_sets.id_set = bidding_sets.id_set 
 		WHERE set_type = ' . $type . ' AND (player_bidding_sets.first_user = ' . $friend_id . ' OR player_bidding_sets.second_user = ' . $friend_id . ') AND 
-			(player_bidding_sets.first_user = ' . $user_id . ' OR player_bidding_sets.second_user = ' . $user_id . ') AND id_folder = ' . $id_folder . ';';
+			(player_bidding_sets.first_user = ' . $user_id . ' OR player_bidding_sets.second_user = ' . $user_id . ') AND id_folder = ' . $id_folder . ' ORDER BY bidding_sets.id_set;';
 
 	$run_biddingset = mysqli_query($con, $get_biddingset);
 
