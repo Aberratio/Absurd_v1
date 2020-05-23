@@ -18,6 +18,7 @@ if (!isset($_SESSION['is_logged'])) {
 
 <?php include 'templates/header.php'; ?>
 <?php include 'templates/navbar.php'; ?>
+<script type="text/javascript" src="js/accordion.js"></script>
 
 <!-- MENU -->
 
