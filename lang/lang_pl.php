@@ -12,8 +12,8 @@ class Infos
     public $tournament_generator_description = "Utwórz nowy zestaw i dodaj własne testy. Możesz także edytować stare zestawy.";
 
     public $bidding_quiz_header = "Quizy licytacyjne";
-    public $bidding_quiz_description = "Czy kiedykolwiek miałeś problem ze znalezieniem dogodnej daty na szkolenie licytacyjne ze 
-        swoim partnerem? To nie jest problem! Spróbuj asynchronicznych quizów licytacyjnych.";
+    public $bidding_quiz_description = "Czy kiedykolwiek znalezienie dogodnej daty na szkolenie licytacyjne ze 
+        swoim partnerem sprawiło Ci trudności? To już nie problem! Spróbuj asynchronicznych quizów licytacyjnych.";
 
     public $ranking_header = "Ranking";
     public $ranking_description = "Sprawdź swoje osiągnięcia. Jak wypadasz na tle innych graczy? Czy jesteś w TOP 50?";
@@ -31,7 +31,7 @@ class Infos
     public $change_profile_picture_description = "Korzystanie z tej aplikacji będzie wygodniejsze i przyjemniejsze.";
 
     public $send_nicknames_header = "Wyślij loginy";
-    public $send_nicknames_description = "Wyślij login swój i Twojego partnera do jednego z naszych trenerów i poczekaj na zestawy od niego.";
+    public $send_nicknames_description = "Wyślij login swój i Twojego partnera do jednego z naszych trenerów i ciesz się nowymi zestawami.";
 
     public $check_scores_header = "Licytuj i sprawdzaj swój wynik w rankingu";
     public $check_scores_description = "Możesz sprawdzić swoje postępy zarówno w rankingu ogólnym, jak i osobnych rankingach dla każdego problemu.";
@@ -42,7 +42,7 @@ class Infos
     public $good_luck_header = "Powodzenia! Baw się dobrze ♥ ♥ ♥";
 
     // Find Player
-    public $find_player = "Wyszukaj gracza";
+    public $find_player = "Moi Partnerzy";
 
     // Conntact Line
     public $need_help_cloud = "Masz problem i potrzebujesz pomocy?";
@@ -50,10 +50,10 @@ class Infos
     public $join_trainers_cloud = "Albo zastanawiałeś się nad tym, czy możesz zostać trenerem?";
     public $found_bug_cloud = "Znalazłeś jakiś błąd w aplikacji?";
     public $development_cloud = "Chcesz pracować ze mną nad rozwojem Absurdu?";
-    public $write_me_button = "Napisz do mnie";
+    public $write_me_button = "Skontaktuj się ze mną";
 
     // Find Set
-    public $find_set = "Znajdź zestaw";
+    public $find_set = "Rozwiąż zestaw";
     public $set_name = "Nazwa";
     public $set_completed = "Ukończone";
     public $score = "Wynik";
@@ -66,12 +66,12 @@ class Infos
     // Level Description
     public $level_description_header = "Opis poziomów";
     public $level = "Poziom";
-    public $beginner_level_description = "Zestawy dla początkujących. Rozgrywający nie jest ważny. Nie ma trudnych rąk do licytacji.";
-    public $intermediate_level_description = "Poziom średniozaawansowany. Znajdziesz tutaj trudniejsze ręce, ale rozdający wciąż nie jest ważny.";
-    public $experts_level_description = "Dla ekspertów. Znajdziesz tutaj ciekawe ręce i nie dostaniesz punktów, jeśli rozgrywającym zostanie niewłaściwy gracz.";
+    public $beginner_level_description = "Zestawy dla początkujących. Zadania są łatwe i skupiają się na konkretnym rodzaju problemów licytacyjnych. Treningi poświęcone są pojedynczym konwencjom.";
+    public $intermediate_level_description = "Poziom średniozaawansowany. Znajdziesz tutaj różne ręce. Punkty przyznawane są za osiągnięty kontrakt, nie jest uwzględniany wybrany w toku licytacji rozgrywający.";
+    public $experts_level_description = "Dla ekspertów. Kłopotliwe rozdania, różne założenia... Dodatkową trudnością jest konieczność ustawienia rozgrywki z dobrej ręki.";
 
     // Find Problem
-    public $find_problem = "Znajdź zadanie";
+    public $find_problem = "Rozwiąż zadanie";
     public $problem_turn = "Kolej";
     public $problem = "Zadanie";
 

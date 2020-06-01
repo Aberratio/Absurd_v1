@@ -42,7 +42,7 @@ class Infos
     public $good_luck_header = "Good luck and have fun! ♥ ♥ ♥";
 
     //Find Player
-    public $find_player = "Player Menu Panel";
+    public $find_player = "My Partners";
 
     //Conntact Line
     public $need_help_cloud = "Do you have a problem and need help?";
@@ -53,7 +53,7 @@ class Infos
     public $write_me_button = "Write me a message";
 
     //Find Set
-    public $find_set = "Find bidding set";
+    public $find_set = "Solve bidding set";
     public $set_name = "Name";
     public $set_completed = "Completed";
     public $score = "Score";
@@ -71,7 +71,7 @@ class Infos
     public $experts_level_description = "This is for experts. You can find here interesting hands and you don't get points, if there is the wrong declarer.";
 
     //Find Problem
-    public $find_problem = "Find Problem";
+    public $find_problem = "Solve Problem";
     public $problem_turn = "Turn";
     public $problem = "Problem";
 

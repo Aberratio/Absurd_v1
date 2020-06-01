@@ -42,13 +42,11 @@ $steps = 0;
                                 <!-- TOURNAMENT GENERATOR-->
                                 <?php if ($_SESSION['role'] == 1) {
                                     echo "
-
+                                    <a class='text-decoration-none' href='folder_view.php' >
                                     <div class='card mb-4'>
                                     <div class='row no-gutters mt-2'>
                                         <div class='col-auto'>
-                                            <a href='folder_view.php' class='d-block'>
                                                 <i class='fas fa-plus-square fa-6x m-3'></i>
-                                            </a>
                                         </div>
                                         <div class='col ml-1'>
                                             <div class='card-block px-2'>
@@ -61,84 +59,84 @@ $steps = 0;
                                             </div>
                                         </div>
                                     </div>
-                                </div>";
+                                </div>
+                                </a>";
                                 }
                                 ?>
 
 
                                 <!-- BIDDING QUIZ-->
-                                <div class="card mb-4">
-                                    <div class="row no-gutters mt-2">
-                                        <div class="col-auto">
-                                            <a href="choose_partner_bidding.php?type=0" class="d-block p-auto">
+                                <a href="choose_partner_bidding.php?type=0" class='text-decoration-none'>
+                                    <div class="card mb-4">
+                                        <div class="row no-gutters mt-2">
+                                            <div class="col-auto">
                                                 <i class="fas fa-box fa-6x m-3"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col ml-1">
-                                            <div class="card-block px-2">
-                                                <h4 class="card-title font-weight-bold text-capitalize">
-                                                    <?php echo $infos->bidding_quiz_header; ?>
-                                                </h4>
-                                                <p class="card-text">
-                                                    <?php echo $infos->bidding_quiz_description; ?>
-                                                </p>
+                                            </div>
+                                            <div class="col ml-1">
+                                                <div class="card-block px-2">
+                                                    <h4 class="card-title font-weight-bold text-capitalize">
+                                                        <?php echo $infos->bidding_quiz_header; ?>
+                                                    </h4>
+                                                    <p class="card-text">
+                                                        <?php echo $infos->bidding_quiz_description; ?>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
 
                                 <!-- RANKING -->
-                                <div class="card mb-4">
-                                    <div class="row no-gutters mt-2">
-                                        <div class="col-auto">
-                                            <a href="ranking.php" class="d-block">
+                                <a href="ranking.php" class='text-decoration-none'>
+                                    <div class="card mb-4">
+                                        <div class="row no-gutters mt-2">
+                                            <div class="col-auto">
                                                 <i class="fas fa-trophy fa-6x m-3"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col ml-1">
-                                            <div class="card-block px-2">
-                                                <h4 class="card-title font-weight-bold text-capitalize">
-                                                    <?php echo $infos->ranking_header; ?>
-                                                </h4>
-                                                <p class="card-text">
-                                                    <?php echo  $infos->ranking_description; ?>
-                                                </p>
+                                            </div>
+                                            <div class="col ml-1">
+                                                <div class="card-block px-2">
+                                                    <h4 class="card-title font-weight-bold text-capitalize">
+                                                        <?php echo $infos->ranking_header; ?>
+                                                    </h4>
+                                                    <p class="card-text">
+                                                        <?php echo  $infos->ranking_description; ?>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
 
                                 <!-- SETTINGS-->
-                                <div class="card mb-4">
-                                    <div class="row no-gutters mt-2">
-                                        <div class="col-auto">
-                                            <a href="account_settings.php" class="d-block">
+                                <a href="account_settings.php" class='text-decoration-none'>
+                                    <div class="card mb-4">
+                                        <div class="row no-gutters mt-2">
+                                            <div class="col-auto">
                                                 <i class="fas fa-cog fa-6x m-3"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col ml-1">
-                                            <div class="card-block px-2">
-                                                <h4 class="card-title font-weight-bold text-capitalize">
-                                                    <?php echo $infos->settings_header; ?>
-                                                </h4>
-                                                <p class="card-text">
-                                                    <?php echo $infos->settings_description; ?>
-                                                </p>
+                                            </div>
+                                            <div class="col ml-1">
+                                                <div class="card-block px-2">
+                                                    <h4 class="card-title font-weight-bold text-capitalize">
+                                                        <?php echo $infos->settings_header; ?>
+                                                    </h4>
+                                                    <p class="card-text">
+                                                        <?php echo $infos->settings_description; ?>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
 
                                 <!-- TESTY NA ZGODNOŚĆ W PARZE -->
                                 <?php if ($_SESSION['role'] == 1) {
                                     echo "
 
+                                    <a href='choose_partner_bidding.php?type=1' class='text-decoration-none'>
                                     <div class='card mb-4'>
                                     <div class='row no-gutters mt-2'>
                                         <div class='col-auto'>
-                                            <a href='choose_partner_bidding.php?type=1' class='d-block'>
                                                 <i class='fas fa-plus-square fa-6x m-3'></i>
-                                            </a>
                                         </div>
                                         <div class='col ml-1'>
                                             <div class='card-block px-2'>
@@ -152,7 +150,8 @@ $steps = 0;
                                             </div>
                                         </div>
                                     </div>
-                                </div>";
+                                </div>
+                                </a>";
                                 }
                                 ?>
 
@@ -160,12 +159,11 @@ $steps = 0;
                                 <?php if ($_SESSION['role'] == 1) {
                                     echo "
 
+                                    <a href='#' class='text-decoration-none'>
                                     <div class='card mb-4'>
                                     <div class='row no-gutters mt-2'>
                                         <div class='col-auto'>
-                                            <a href='#' class='d-block'>
                                                 <i class='fas fa-plus-square fa-6x m-3'></i>
-                                            </a>
                                         </div>
                                         <div class='col ml-1'>
                                             <div class='card-block px-2'>
@@ -179,34 +177,34 @@ $steps = 0;
                                             </div>
                                         </div>
                                     </div>
-                                </div>";
+                                </div>
+                                </a>";
                                 }
                                 ?>
 
                                 <!-- ADMIN PANEL-->
                                 <?php if ($_SESSION['role'] == 1) {
                                     echo "
-
-                                    <div class='card mb-4'>
-                                    <div class='row no-gutters mt-2'>
-                                        <div class='col-auto'>
-                                            <a href='administration.php' class='d-block'>
-                                                <i class='fas fa-plus-square fa-6x m-3'></i>
-                                            </a>
-                                        </div>
-                                        <div class='col ml-1'>
-                                            <div class='card-block px-2'>
-                                                <h4 class='card-title font-weight-bold text-capitalize'>
-                                                    Admin Panel
-                                                </h4>
-                                                <p class='card-text'>
-                                                    Create a new set and add your own tests. 
-                                                    You can also edit old sets.
-                                                </p>
+                                    <a href='administration.php' class='text-decoration-none'>
+                                        <div class='card mb-4'>
+                                            <div class='row no-gutters mt-2'>
+                                                <div class='col-auto'>
+                                                        <i class='fas fa-plus-square fa-6x m-3'></i>
+                                                </div>
+                                                <div class='col ml-1'>
+                                                    <div class='card-block px-2'>
+                                                        <h4 class='card-title font-weight-bold text-capitalize'>
+                                                            Admin Panel
+                                                        </h4>
+                                                        <p class='card-text'>
+                                                            Create a new set and add your own tests. 
+                                                            You can also edit old sets.
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>";
+                                    </a>";
                                 }
                                 ?>
 
@@ -214,12 +212,11 @@ $steps = 0;
                                 <?php if ($_SESSION['role'] == 1) {
                                     echo "
 
+                                    <a href='admin_panel.php' class='text-decoration-none'>
                                     <div class='card mb-4'>
                                     <div class='row no-gutters mt-2'>
                                         <div class='col-auto'>
-                                            <a href='admin_panel.php' class='d-block'>
                                                 <i class='fas fa-plus-square fa-6x m-3'></i>
-                                            </a>
                                         </div>
                                         <div class='col ml-1'>
                                             <div class='card-block px-2'>
@@ -233,33 +230,33 @@ $steps = 0;
                                             </div>
                                         </div>
                                     </div>
-                                </div>";
+                                </div>
+                                </a>";
                                 }
                                 ?>
 
                                 <!-- TRAINING GROUPS-->
                                 <?php if ($_SESSION['role'] == 1 or $_SESSION['role'] == 2) {
                                     echo "
-
-                                    <div class='card mb-4'>
-                                    <div class='row no-gutters mt-2'>
-                                        <div class='col-auto'>
-                                            <a href='training_groups.php' class='d-block'>
-                                                <i class='fas fa-users fa-4x m-3'></i>
-                                            </a>
-                                        </div>
-                                        <div class='col ml-1'>
-                                            <div class='card-block px-2'>
-                                                <h4 class='card-title font-weight-bold text-capitalize'>
-                                                " . $infos->training_groups_header . "
-                                                </h4>
-                                                <p class='card-text'>
-                                                " . $infos->training_groups_description . "
-                                                </p>
+                                    <a href='training_groups.php' class='text-decoration-none'>
+                                        <div class='card mb-4'>
+                                            <div class='row no-gutters mt-2'>
+                                                <div class='col-auto'>
+                                                        <i class='fas fa-users fa-4x m-3'></i>
+                                                </div>
+                                                <div class='col ml-1'>
+                                                    <div class='card-block px-2'>
+                                                        <h4 class='card-title font-weight-bold text-capitalize'>
+                                                        " . $infos->training_groups_header . "
+                                                        </h4>
+                                                        <p class='card-text'>
+                                                        " . $infos->training_groups_description . "
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>";
+                                    </a>";
                                 }
                                 ?>
 
@@ -398,7 +395,7 @@ $steps = 0;
         </div>
     </div>
 
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>

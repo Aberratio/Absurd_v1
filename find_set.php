@@ -27,10 +27,10 @@ function search_for_folders($friend_id, $type, $user_id, $infos)
 				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 				<h4 class="panel-title text-capitalize">
-					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' . $id_folder . '" aria-expanded="false" aria-controls="collapse' . $id_folder . '">
+					<button class="btn btn-secondary my-1" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' . $id_folder . '" aria-expanded="false" aria-controls="collapse' . $id_folder . '">
 						' . $folder_name . '
-					</a>
-					<small class="text-info">
+					</button>
+					<small class="text-primary">
 					' . $infos->level . ' ' . $folder_level . '
 					</small>
 				</h4>
@@ -96,20 +96,18 @@ function search_set_in_folder($friend_id, $type, $id_folder, $user_id)
 		$points_counter = mysqli_query($con, $get_goints_in_set);
 		$aaa =  mysqli_fetch_array($points_counter);
 
-		$result_string = $result_string . '<tr>
-			<th>
-			<a href="';
+		$result_string = $result_string . '<tr style="cursor: pointer;" class="clickable-row" data-href="';
 
 		if ($type == 0) {
-			$result_string = $result_string . "choose_bidding_test.php?set=" . $biddingset . "&type=" . $type . "&friend=" . $friend_id . "";
+			$result_string = $result_string . 'choose_bidding_test.php?set=' . $biddingset . '&type=' . $type . '&friend=' . $friend_id . '">';
 		} else if ($type == 1) {
-			$result_string = $result_string . "comp_test_page.php";
+			$result_string = $result_string . 'comp_test_page.php">';
 		}
 
 		$result_string = $result_string . '
-                ">
+                <th>
                     <h4 class="card-title font-weight-bold text-capitalize mr-3"> ' . $setname . ' </h4> 
-                </a>
+               
 			</th>
             <th>
 				<p class="font-weight-normal">

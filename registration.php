@@ -150,37 +150,40 @@ if (isset($_POST['user'])) {
                             <span class="input-group-text "><i class="fas fa-user"></i></span>
                         </div>
                         <input class="form-control" type="text" id="nickname" name="user" placeholder="Nickname" />
-                        <?php
-                        if (isset($_SESSION['error_user'])) {
-                            echo '<div class="error">' . $_SESSION['error_user'] . '</div>';
-                            unset($_SESSION['error_user']);
-                        }
-                        ?>
                     </div>
+                    <?php
+                    if (isset($_SESSION['error_user'])) {
+                        echo '<div class="error text-secondary">' . $_SESSION['error_user'] . '</div>';
+                        unset($_SESSION['error_user']);
+                    }
+                    ?>
+
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text "><i class="fas fa-envelope"></i></span>
                         </div>
                         <input class="form-control" type="email" id="email" name="email" placeholder="Email" />
-                        <?php
-                        if (isset($_SESSION['error_email'])) {
-                            echo '<div class="error">' . $_SESSION['error_email'] . '</div>';
-                            unset($_SESSION['error_email']);
-                        }
-                        ?>
                     </div>
+                    <?php
+                    if (isset($_SESSION['error_email'])) {
+                        echo '<div class="error text-secondary">' . $_SESSION['error_email'] . '</div>';
+                        unset($_SESSION['error_email']);
+                    }
+                    ?>
+
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text "><i class="fas fa-unlock-alt"></i></span>
                         </div>
                         <input class="form-control" type="password" id="password" name="password1" placeholder="Password" />
-                        <?php
-                        if (isset($_SESSION['error_password'])) {
-                            echo '<div class="error">' . $_SESSION['error_password'] . '</div>';
-                            unset($_SESSION['error_password']);
-                        }
-                        ?>
                     </div>
+                    <?php
+                    if (isset($_SESSION['error_password'])) {
+                        echo '<div class="error text-secondary">' . $_SESSION['error_password'] . '</div>';
+                        unset($_SESSION['error_password']);
+                    }
+                    ?>
+
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text "><i class="fas fa-unlock-alt"></i></span>
@@ -201,27 +204,34 @@ if (isset($_POST['user'])) {
                     <div class="input-group mb-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="rules" id="gridCheck" />
-                            <label class="form-check-label" for="gridCheck">
-                                I accept the terms
+                            <label class="form-check-label" for="gridCheck">I accept the
+                                <b style="cursor: pointer" data-toggle="tooltip" data-placement="top" title="Have fun!">
+                                    terms
+                                </b>
                             </label>
-                            <?php
-                            if (isset($_SESSION['error_rules'])) {
-                                echo '<div class="error">' . $_SESSION['error_rules'] . '</div>';
-                                unset($_SESSION['error_rules']);
-                            }
-                            ?>
                         </div>
                     </div>
+                    <?php
+                    if (isset($_SESSION['error_rules'])) {
+                        echo '<div class="error text-secondary">' . $_SESSION['error_rules'] . '</div>';
+                        unset($_SESSION['error_rules']);
+                    }
+                    ?>
+                    <script>
+                        $(function() {
+                            $('[data-toggle="tooltip"]').tooltip()
+                        })
+                    </script>
+
                     <div class="input-group mb-3">
                         <div class="g-recaptcha" data-sitekey="6LcHc7wUAAAAAF2gHVVyoLBzI1x1iLfJA66g5bRf"></div>
-
-                        <?php
-                        if (isset($_SESSION['error_humanity'])) {
-                            echo '<div class="error">' . $_SESSION['error_humanity'] . '</div>';
-                            unset($_SESSION['error_humanity']);
-                        }
-                        ?>
                     </div>
+                    <?php
+                    if (isset($_SESSION['error_humanity'])) {
+                        echo '<div class="error text-secondary">' . $_SESSION['error_humanity'] . '</div>';
+                        unset($_SESSION['error_humanity']);
+                    }
+                    ?>
 
                     <button class="btn btn-secondary btn-block" type="submit" value="Submit">Start the adventure</button>
 
