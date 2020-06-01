@@ -48,6 +48,14 @@ if (!isset($_SESSION['is_logged'])) {
                                 </div>
                             </div>
 
+                            <script>
+                                jQuery(document).ready(function($) {
+                                    $(".clickable-row").click(function() {
+                                        window.location = $(this).data("href");
+                                    });
+                                });
+                            </script>
+
                         </div>
                     </div>
 

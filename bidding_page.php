@@ -100,7 +100,7 @@ if (!isset($_SESSION['is_logged'])) {
                             <button type="submit" class="biddingbox_bottom_button">&#10060;</button>
                             <button type="submit" class="biddingbox_bottom_button" onclick="declare(36)">PASS</button>
                             <button type="submit" class="biddingbox_bottom_button">&#10060;&#10060;</button> <!-- blue XX-->
-                            <?php if ($_SESSION['role'] == 1) {
+                            <?php if ($_SESSION['id'] == 26 or $_SESSION['id'] == 27) {
                                 echo "
                                     <button type='submit' id='undo_button' class='biddingbox_bottom_button biddingbox_bottom_button_back' onclick='declare(38)'>&#128584;</button>";
                             } else {

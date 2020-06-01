@@ -75,9 +75,9 @@ if (!isset($_SESSION['is_logged'])) {
                                         <div style="clear: both;"> </div>
 
                                         <!-- OUR BIDDING -->
-                                        <div id="bidding" style="float:left; margin-top: 50px;">
-                                            <p><?php echo $infos->our_bidding; ?></p>
-                                            <table id="bidding_desk">
+                                        <div class="my-3 w-100">
+                                            <p class="text-center mt-2"><?php echo $infos->our_bidding; ?></p>
+                                            <table id="bidding_desk" class="ml-4">
                                                 <td id="N" class="bidding_desk_column" style="padding: 3px; width: 150px;">N</td>
                                                 <td id="E" class="bidding_desk_column" style="padding: 3px; width: 150px;">E</td>
                                                 <td id="S" class="bidding_desk_column" style="padding: 3px; width: 150px;">S</td>
@@ -88,34 +88,14 @@ if (!isset($_SESSION['is_logged'])) {
                                         </div>
                                         <!-- END OUR BIDDING -->
 
+                                        <a class="btn btn-secondary btn-block mb-4 mt-2 mx-5" target="bidding" href="right_bidding_pop.php?biddingtest=$test_id&test_main_id=$test_main_id" onclick="window.open('right_bidding_pop.php?biddingtest=<?php echo $test_id; ?>&test_main_id=<?php echo $test_main_id; ?>', 'Right bidding').focus(); return false">
+                                            <?php echo $infos->check_proposed_bidding; ?></a>
+
                                         <!-- POINTS TABLE -->
                                         <div id="points_table" style="float: left;">
                                             <?php get_points_table($test_id); ?>
                                         </div>
                                         <!-- END POINTS TABLE -->
-
-                                        <div id="bidding" style="float:left; margin-top: 50px;">
-
-                                            <a target="bidding" href="right_bidding_pop.php?biddingtest=$test_id" onclick="window.open('right_bidding_pop.php?biddingtest=<?php echo $test_id; ?>', 'Right bidding').focus(); return false">
-                                                <?php echo $infos->proposed_bidding; ?></a>
-
-                                            <div id="biddingbox" style="display: none;">
-
-                                                <div id="biddingbox_top">
-                                                </div>
-                                                <div id="biddingbox_bottom">
-                                                    <button type="submit" class="biddingbox_bottom_button"">&#10060;</button>
-                                                        <button type=" submit" class="biddingbox_bottom_button" onclick="declare(36)">PASS</button>
-                                                    <button type="submit" class="biddingbox_bottom_button"">&#10060;&#10060;</button> <!-- blue XX--> 
-                                                        <button type=" submit" class="biddingbox_bottom_button biddingbox_bottom_button_back" onclick="declare(38)">&#128584;</button>
-
-                                                </div>
-                                                <?php update_player_bidding($test_id, $friend); ?>
-                                            </div>
-                                            <div style="clear: both;"> </div>
-                                        </div>
-
-
                                     </div>
                                 </div>
                                 <!-- POINTS PAGE END-->
@@ -170,6 +150,30 @@ if (!isset($_SESSION['is_logged'])) {
             </div>
         </div>
 
+
+
+        <!-- Bidding box -->
+        <div id="bidding">
+
+            <div id="biddingbox" style="display: none;">
+
+                <div id="biddingbox_top">
+                </div>
+                <div id="biddingbox_bottom">
+                    <button type="submit" class="biddingbox_bottom_button">&#10060;</button>
+                    <button type="submit" class="biddingbox_bottom_button" onclick="declare(36)">PASS</button>
+                    <button type="submit" class="biddingbox_bottom_button">&#10060;&#10060;</button> <!-- blue XX-->
+                    <button type="submit" class="biddingbox_bottom_button biddingbox_bottom_button_back" onclick="declare(38)">&#128584;</button>
+                </div>
+                <?php update_player_bidding($test_id, $friend); ?>
+            </div>
+            <div style="clear: both;"> </div>
+        </div>
+
+        <!-- End of bidding box -->
+
+
+
         <!-- FOOTER -->
 
         <div class="navbar fixed-bottom justify-content-center align-content-center" id="main-footer">
@@ -182,7 +186,7 @@ if (!isset($_SESSION['is_logged'])) {
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>

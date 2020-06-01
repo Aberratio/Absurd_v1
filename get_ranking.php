@@ -118,7 +118,7 @@ function get_ranking_set_table($set_id, $max_points, $infos)
 
     $get_points_in_set = "SELECT SUM(player_bidding_tests.points) AS points, player_bidding_sets.first_user AS first_user, player_bidding_sets.second_user 
     AS second_user FROM player_bidding_tests JOIN player_bidding_sets ON player_bidding_tests.id_player_set = player_bidding_sets.id_player_sets
-     WHERE player_bidding_sets.id_set = " . $set_id . " AND player_bidding_tests.completed_test = 1 GROUP BY id_player_sets ORDER BY 1 DESC LIMIT 50;";
+     WHERE player_bidding_sets.id_set = " . $set_id . " AND player_bidding_tests.completed_test = 1 GROUP BY id_player_sets ORDER BY 1 DESC LIMIT 20;";
 
     $points_counter = mysqli_query($con, $get_points_in_set);
     $row_set_score = mysqli_fetch_array($points_counter);
