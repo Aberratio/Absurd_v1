@@ -24,6 +24,9 @@ class Infos
     public $training_groups_header = "Grupy treningowe";
     public $training_groups_description = "Dodaj swoje pary, rzuć im wyzwanie w postaci nowych zestawów licytacyjnych i monitoruj ich postępy. Dobry trener musi być na bieżąco!";
 
+    public $competition_header = "Konkurs";
+    public $competition_description = "Do końca sierpnia możesz wziąć udział w konkursie z nagrodami!";
+
     // What you have to do?
     public $what_you_have_to_do = "Co musisz zrobić?";
 
@@ -98,6 +101,8 @@ class Infos
     public $user = "Gracz";
     public $role = "Funkcja";
     public $admin = "Admin";
+    public $visits = "Wizyty";
+    public $last_login = "Ostatnie logowanie";
     public $trainer = "Trener";
     public $proposed_bidding = "Proponowana licytacja";
     public $our_bidding = "Nasza licytacja";

@@ -34,10 +34,21 @@ if (!isset($_SESSION['is_logged'])) {
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
                             <?php echo $infos->find_player; ?>
                         </h4>
+                        <a href='menu.php' class='text-decoration-none ml-2 mb-2'>
+                            <i class="fas fa-long-arrow-alt-left mr-2"></i> <?php echo $infos->back; ?>
+                        </a>
                         <div class="option_container mx-3 mt-2">
                             <div class="option">
-                                <?php search_user($_SESSION['user'], $_GET['type']); ?>
+                                <?php search_user($_SESSION['user'], $_GET['type'], $infos); ?>
                             </div>
+
+                            <script>
+                                jQuery(document).ready(function($) {
+                                    $(".clickable-row").click(function() {
+                                        window.location = $(this).data("href");
+                                    });
+                                });
+                            </script>
                         </div>
 
                         <button class="btn btn-secondary my-2 mx-5" data-toggle="modal" data-target="#helperModal"><?php echo $infos->need_help ?> </button>
@@ -220,48 +231,49 @@ if (!isset($_SESSION['is_logged'])) {
             </div>
 
 
-            <!-- NEWS -->
-            <div class="col-sm-10 col-md-6 col-lg-4 mx-auto">
-                <div class="container mt-5 card">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-panel">
-                                <div class="timeline-body">
-                                    <p><?php echo $infos->need_help_cloud; ?></p>
+            <!-- HELP -->
+            <div class="col-sm-10 col-lg-5 mx-auto">
+                <div class="container mt-5">
+                    <div class="card p-2">
+                        <ul class="timeline">
+                            <li>
+                                <div class="timeline-panel">
+                                    <div class="timeline-body">
+                                        <p><?php echo $infos->need_help_cloud; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-panel">
-                                <div class="timeline-body">
-                                    <p><?php echo $infos->intresting_tests_cloud; ?></p>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-panel">
+                                    <div class="timeline-body">
+                                        <p><?php echo $infos->intresting_tests_cloud; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-panel">
-                                <div class="timeline-body">
-                                    <p><?php echo $infos->join_trainers_cloud; ?></p>
+                            </li>
+                            <li>
+                                <div class="timeline-panel">
+                                    <div class="timeline-body">
+                                        <p><?php echo $infos->join_trainers_cloud; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-panel">
-                                <div class="timeline-body">
-                                    <p><?php echo $infos->found_bug_cloud; ?></p>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-panel">
+                                    <div class="timeline-body">
+                                        <p><?php echo $infos->found_bug_cloud; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-panel">
-                                <div class="timeline-body">
-                                    <p><?php echo $infos->development_cloud; ?></p>
+                            </li>
+                            <li>
+                                <div class="timeline-panel">
+                                    <div class="timeline-body">
+                                        <p><?php echo $infos->development_cloud; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <a class="btn btn-secondary mt-3 btn-block mb-3 mt-1" href="https://www.facebook.com/joanna.kokot.37" target="_blank"><?php echo $infos->write_me_button; ?></a>
-
+                            </li>
+                        </ul>
+                        <a class="btn btn-secondary mt-3 btn-block mb-3 mt-1" href="https://www.facebook.com/joanna.kokot.37" target="_blank"><?php echo $infos->write_me_button; ?></a>
+                    </div>
                 </div>
             </div>
         </div>

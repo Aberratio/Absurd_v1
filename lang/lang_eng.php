@@ -24,6 +24,9 @@ class Infos
     public $training_groups_header = "Training Groups";
     public $training_groups_description = "Add your pairs, challenge them in the form of new bidding sets and monitor their progress. A good trainer must be up to date!";
 
+    public $competition_header = "Competition (only PL)";
+    public $competition_description = "You can take part in the prize competition until the end of August!";
+
     //What you have to do?
     public $what_you_have_to_do = "What You Have To Do?";
 
@@ -98,6 +101,8 @@ class Infos
     public $user = "Player";
     public $role = "Role";
     public $admin = "Admin";
+    public $visits = "Visits";
+    public $last_login = "Last login";
     public $trainer = "Trainer";
     public $proposed_bidding = "Proposed bidding";
     public $our_bidding = "Our bidding";

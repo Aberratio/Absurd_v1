@@ -105,7 +105,6 @@ if (!isset($_SESSION['is_logged'])) {
                                     </div>
                                 </div>
 
-
                             </div>
                         </div>
                     </div>

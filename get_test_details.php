@@ -318,7 +318,6 @@ function update_player_bidding($test, $friend)
         $second_player = $row_biddingtest['second_player'];
         $test_number = $row_biddingtest['test_number'];
         $test_main_id = $row_biddingtest['id_test'];
-        $set_id = $row_biddingtest['id_set'];
 
         echo "
         <form id='send_bidding' method='get'>

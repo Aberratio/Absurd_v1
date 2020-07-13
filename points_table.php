@@ -88,7 +88,7 @@ if (!isset($_SESSION['is_logged'])) {
                                         </div>
                                         <!-- END OUR BIDDING -->
 
-                                        <a class="btn btn-secondary btn-block mb-4 mt-2 mx-5" target="bidding" href="right_bidding_pop.php?biddingtest=$test_id&test_main_id=$test_main_id" onclick="window.open('right_bidding_pop.php?biddingtest=<?php echo $test_id; ?>&test_main_id=<?php echo $test_main_id; ?>', 'Right bidding').focus(); return false">
+                                        <a class="btn btn-secondary btn-block mb-4 mt-2 mx-5" target="bidding" href="right_bidding_pop.php?biddingtest=$test_id&test_main_id=$test_main_id&test_number=$test_number" onclick="window.open('right_bidding_pop.php?biddingtest=<?php echo $test_id; ?>&test_main_id=<?php echo $test_main_id; ?>&test_number=<?php echo $test_number; ?>', 'Right bidding').focus(); return false">
                                             <?php echo $infos->check_proposed_bidding; ?></a>
 
                                         <!-- POINTS TABLE -->
@@ -106,7 +106,7 @@ if (!isset($_SESSION['is_logged'])) {
             </div>
 
             <!-- Comments -->
-            <div class="col-sm-10 col-md-6 col-lg-5 mx-auto">
+            <div class="col-sm-10 col-lg-5 mx-auto">
                 <div class="container mt-5">
                     <div class="card mt-2">
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
@@ -116,7 +116,8 @@ if (!isset($_SESSION['is_logged'])) {
                             <div class='row no-gutters mt-2'>
                                 <div class="option">
                                     <div class='col-auto'>
-                                        <img class="profile_picture mb-2" src="<?php echo $_SESSION['profile_picture'] ?>">
+                                        <img class='profile_picture' style='width:60px; height: 60px; 
+				border: 1px solid black; border-radius: 75%;' src='<?php echo $_SESSION['profile_picture'] ?>'>
                                     </div>
                                 </div>
                                 <div class='col ml-1'>

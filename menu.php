@@ -64,6 +64,26 @@ $steps = 0;
                                 }
                                 ?>
 
+                                <!-- COMPETITION -->
+                                <a href="competition.php" class='text-decoration-none'>
+                                    <div class="card mb-4">
+                                        <div class="row no-gutters mt-2">
+                                            <div class="col-auto">
+                                                <i class="fas fa-medal fa-6x m-3"></i>
+                                            </div>
+                                            <div class="col ml-1">
+                                                <div class="card-block px-2">
+                                                    <h4 class="card-title font-weight-bold text-capitalize">
+                                                        <?php echo $infos->competition_header; ?>
+                                                    </h4>
+                                                    <p class="card-text">
+                                                        <?php echo $infos->competition_description; ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
 
                                 <!-- BIDDING QUIZ-->
                                 <a href="choose_partner_bidding.php?type=0" class='text-decoration-none'>
@@ -242,7 +262,7 @@ $steps = 0;
                                         <div class='card mb-4'>
                                             <div class='row no-gutters mt-2'>
                                                 <div class='col-auto'>
-                                                        <i class='fas fa-users fa-4x m-3'></i>
+                                                        <i class='fas fa-user-graduate fa-6x m-3'></i>
                                                 </div>
                                                 <div class='col ml-1'>
                                                     <div class='card-block px-2'>
@@ -294,7 +314,7 @@ $steps = 0;
             </div>
 
             <!-- WHAT YOU HAVE TO DO -->
-            <div class="col-sm-10 col-md-6 col-lg-4 mx-auto">
+            <div class="col-sm-10 col-lg-4 mx-auto">
                 <div class="container mt-5">
                     <div class="card process text-center py-2">
                         <h3 class="d-block text-center py-2 mt-2 mx-3 text-capitalize">
@@ -351,7 +371,7 @@ $steps = 0;
 
                         <div class="mx-auto mb-3" style="max-width: 18rem;">
                             <a class="text-decoration-none d-block" href="ranking.php">
-                                <i class="fas fa-medal fa-4x process-icon my-2">
+                                <i class="fas fa-users fa-4x process-icon my-2">
                                     <div class="process-step"><?php echo ++$steps; ?></div>
                                 </i>
                                 <h4><?php echo $infos->ranking_header; ?></h4>

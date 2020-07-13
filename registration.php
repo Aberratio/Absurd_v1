@@ -52,14 +52,14 @@ if (isset($_POST['user'])) {
     $language = $_POST['language'];
 
     //checking humanity
-    $secret_key = "6LcHc7wUAAAAADazqGqrLGVScTewI9ltumGnLLO6";
-    $check = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $_POST['g-recaptcha-response']);
-    $response = json_decode($check);
+    // $secret_key = "6LdKvrAZAAAAAA7CRG5UbPc6JFqcCMhUVaf2wFZc";
+    // $check = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $_POST['g-recaptcha-response']);
+    // $response = json_decode($check);
 
-    if ($response->success == false) {
-        $is_good = false;
-        $_SESSION['error_humanity'] = "Boot detected";
-    }
+    // if ($response->success == false) {
+    //     $is_good = false;
+    //     $_SESSION['error_humanity'] = "Boot detected";
+    // }
 
     require_once "connect.php";
     mysqli_report(MYSQLI_REPORT_STRICT);
@@ -223,15 +223,15 @@ if (isset($_POST['user'])) {
                         })
                     </script>
 
-                    <div class="input-group mb-3">
+                    <!-- <div class="input-group mb-3">
                         <div class="g-recaptcha" data-sitekey="6LcHc7wUAAAAAF2gHVVyoLBzI1x1iLfJA66g5bRf"></div>
                     </div>
                     <?php
-                    if (isset($_SESSION['error_humanity'])) {
-                        echo '<div class="error text-secondary">' . $_SESSION['error_humanity'] . '</div>';
-                        unset($_SESSION['error_humanity']);
-                    }
-                    ?>
+                    // if (isset($_SESSION['error_humanity'])) {
+                    //     echo '<div class="error text-secondary">' . $_SESSION['error_humanity'] . '</div>';
+                    //     unset($_SESSION['error_humanity']);
+                    // }
+                    ?> -->
 
                     <button class="btn btn-secondary btn-block" type="submit" value="Submit">Start the adventure</button>
 

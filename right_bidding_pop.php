@@ -5,6 +5,7 @@ include("get_comments.php");
 include("connect.php");
 
 $test_id = $_GET['biddingtest'];
+$test_number = $_GET['test_number'];
 $test_main_id = $_GET['test_main_id'];
 
 if ($_SESSION['language'] == 1) {
@@ -38,7 +39,7 @@ if (!isset($_SESSION['is_logged'])) {
                 <div class="container mt-5">
                     <div class="card">
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
-                            <?php echo $infos->problem; ?>
+                            <?php echo $infos->problem . " " . $test_number; ?>
                         </h4>
                         <div class="option_container mx-3 mt-2">
                             <div class="option">

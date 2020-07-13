@@ -41,6 +41,21 @@ echo $x['set_name']; ?></div>
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
                             <?php echo $infos->find_problem; ?>
                         </h4>
+                        <?php
+
+                        if ($x['first_user'] != $_SESSION['id'] && $x['second_user'] != $_SESSION['id']) {
+                            echo " 
+                            <a href='choose_player_set.php?type=0&first_user=" . $x['first_user'] . "&second_user=" . $x['second_user'] . "' class='text-decoration-none ml-2 mb-2'>
+                                <i class='fas fa-long-arrow-alt-left mr-2'></i> $infos->back 
+                            </a>";
+                        } else {
+                            echo " 
+                            <a href='choose_bidding_set.php?type=0&friend=" . $_GET['friend'] . "' class='text-decoration-none ml-2 mb-2'>
+                                <i class='fas fa-long-arrow-alt-left mr-2'></i> $infos->back 
+                            </a>";
+                        }
+
+                        ?>
                         <div class="option_container mx-3 mt-2">
                             <table class="table table-striped">
                                 <thead>
@@ -75,9 +90,9 @@ echo $x['set_name']; ?></div>
             <!-- END PLAYER PANEL-->
 
             <!-- NEWS -->
-            <div class="col-sm-10 col-md-6 col-lg-4 mx-auto">
+            <div class="col-sm-10 col-lg-5 mx-auto">
                 <div class="container mt-5">
-                    <div class="card">
+                    <div class="card p-2">
                         <h4 class="d-block text-center py-2 mt-2 mx-3 text-capitalize">
                             <?php echo $infos->set_ranking; ?>
                         </h4>

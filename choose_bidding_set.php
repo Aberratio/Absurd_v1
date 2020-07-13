@@ -35,6 +35,9 @@ if (!isset($_SESSION['is_logged'])) {
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
                             <?php echo $infos->find_set; ?>
                         </h4>
+                        <a href='choose_partner_bidding.php?type=0' class='text-decoration-none ml-2 mb-2'>
+                            <i class="fas fa-long-arrow-alt-left mr-2"></i> <?php echo $infos->back; ?>
+                        </a>
                         <div class="option_container mx-3 mt-2">
                             <div class="page">
 
@@ -63,7 +66,7 @@ if (!isset($_SESSION['is_logged'])) {
             <!-- END PLAYER PANEL-->
 
             <!-- LEVEL DESCRIPTION -->
-            <div class="col-sm-10 col-md-6 col-lg-4 mx-auto">
+            <div class="col-sm-10 col-lg-5 mx-auto">
                 <div class="container mt-5">
                     <div class="card">
                         <h4 class="d-block text-center py-2 mt-2 mx-3 text-capitalize">

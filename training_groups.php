@@ -42,6 +42,9 @@ $infos = new Infos();
                         <h4 class="bg-primary d-block text-center py-2 my-2 mx-3 rounded text-white text-capitalize">
                             <?php echo $infos->my_groups; ?>
                         </h4>
+                        <a href='menu.php' class='text-decoration-none ml-2 mb-2'>
+                            <i class="fas fa-long-arrow-alt-left mr-2"></i> <?php echo $infos->back; ?>
+                        </a>
                         <div class="option_container mx-3 mt-2">
                             <table class="table table-striped">
                                 <thead>
