@@ -24,7 +24,7 @@ if (!isset($_SESSION['is_registred'])) {
         <div class="footer-container">
             <p class="copyright">
                 Copyright &copy; 2020 by
-                <a href="https://www.facebook.com/joanna.kokot.37" target="_blank">Aberratio</a>. All Rights Reserved
+                <a href="https://www.facebook.com/joanna.gertrud.kokot/" target="_blank">Aberratio</a>. All Rights Reserved
             </p>
         </div>
     </div>

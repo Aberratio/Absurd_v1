@@ -64,6 +64,32 @@ $steps = 0;
                                 }
                                 ?>
 
+                                <!-- BRIDGE TESTS-->
+                                <?php if ($_SESSION['role'] == 1) {
+                                    echo "
+
+                                    <a href='choose_bridge_set.php' class='text-decoration-none'>
+                                    <div class='card mb-4'>
+                                    <div class='row no-gutters mt-2'>
+                                        <div class='col-auto'>
+                                                <i class='fas fa-plus-square fa-6x m-3'></i>
+                                        </div>
+                                        <div class='col ml-1'>
+                                            <div class='card-block px-2'>
+                                                <h4 class='card-title font-weight-bold text-capitalize'>
+                                                    Bridge tests
+                                                </h4>
+                                                <p class='card-text'>
+                                                    No i będzie się działo xDDDDDDDDD
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>";
+                                }
+                                ?>
+
                                 <!-- COMPETITION -->
                                 <a href="competition.php" class='text-decoration-none'>
                                     <div class="card mb-4">
@@ -409,7 +435,7 @@ $steps = 0;
             <div class="footer-container">
                 <p class="copyright">
                     Copyright &copy; 2020 by
-                    <a href="https://www.facebook.com/joanna.kokot.37" target="_blank">Aberratio</a>. All Rights Reserved
+                    <a href="https://www.facebook.com/joanna.gertrud.kokot/" target="_blank">Aberratio</a>. All Rights Reserved
                 </p>
             </div>
         </div>

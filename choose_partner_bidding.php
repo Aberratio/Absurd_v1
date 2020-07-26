@@ -272,7 +272,7 @@ if (!isset($_SESSION['is_logged'])) {
                                 </div>
                             </li>
                         </ul>
-                        <a class="btn btn-secondary mt-3 btn-block mb-3 mt-1" href="https://www.facebook.com/joanna.kokot.37" target="_blank"><?php echo $infos->write_me_button; ?></a>
+                        <a class="btn btn-secondary mt-3 btn-block mb-3 mt-1" href="https://www.facebook.com/joanna.gertrud.kokot/" target="_blank"><?php echo $infos->write_me_button; ?></a>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@ if (!isset($_SESSION['is_logged'])) {
             <div class="footer-container">
                 <p class="copyright">
                     Copyright &copy; 2020 by
-                    <a href="https://www.facebook.com/joanna.kokot.37" target="_blank">Aberratio</a>. All Rights Reserved
+                    <a href="https://www.facebook.com/joanna.gertrud.kokot/" target="_blank">Aberratio</a>. All Rights Reserved
                 </p>
             </div>
         </div>
