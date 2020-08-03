@@ -99,6 +99,12 @@ class Infos
     public $update_password = "Update Password!";
     public $language = "Change language";
     public $forgot_password = "Forgot password?";
+    public $settings = "Settings";
+    public $show_profile = "Show Profile";
+    public $points = "Points: ";
+    public $login_amount = "Login Quantity: ";
+    public $permitions = "Permitions: ";
+    public $comment_amount = "Comments Quantity: ";
 
     //Points Table
     public $user = "Player";
