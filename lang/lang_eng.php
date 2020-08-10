@@ -179,6 +179,9 @@ class Infos
     public $send_bidding = "Send bidding";
     public $check_proposed_bidding = "Check proposed bidding";
 
-    //Other
+
+    //Others
+    public $and = "and";
+    public $performance = "performance:";
     public $or = "or";
 }
