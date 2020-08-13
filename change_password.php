@@ -65,13 +65,12 @@ if (!isset($_SESSION['is_logged'])) {
                     </div>
 
 
-                    <!-- <div class=" text-right">
+                    <div class=" text-right">
                       <a href="forgot_pass.php" class="text-decoration-none ml-2 mb-2">
-                         todo- add an apropriate page 
-                    <i class="fa fa-key fa-fw mr-2" aria-hidden="true"></i><?php #echo $infos->forgot_password; 
-                                                                            ?>
-                    </a>
-                  </div> -->
+                        <!-- todo- add an apropriate page -->
+                        <i class="fa fa-key fa-fw mr-2" aria-hidden="true"></i><?php echo $infos->forgot_password; ?>
+                      </a>
+                    </div>
 
                     <?php
                     if (isset($_POST['change'])) {
@@ -100,7 +99,7 @@ if (!isset($_SESSION['is_logged'])) {
                                     </div>
                                   ";
                       }
-                      if ((strlen($pass1) < 8) || (strlen($pass1) > 20)) {
+                      if ((strlen($pass1) < 8) || (strlen($pass1) > 60)) {
                         echo "
                                     <div class='alert alert-danger'>
                                       <strong>" . $infos->characters_in_password . "</strong> 

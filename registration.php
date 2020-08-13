@@ -37,7 +37,7 @@ if (isset($_POST['user'])) {
     $password_one = $_POST['password1'];
     $password_two = $_POST['password2'];
 
-    if ((strlen($password_one) < 8) || (strlen($password_one) > 20)) {
+    if ((strlen($password_one) < 8) || (strlen($password_one) > 60)) {
         $is_good = false;
         $_SESSION['error_password'] =  $infos->password_warning1;
     }
