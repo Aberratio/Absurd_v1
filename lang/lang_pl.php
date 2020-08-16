@@ -181,7 +181,7 @@ class Infos
     //Invitations
     public $send_invite_to_user = "Zaproś gracza do pary";
     public $received_invitations = "Otrzymane zaproszenia";
-    public $sended_invitations = "Wysłane zaproszenia";
+    public $sent_invitations = "Wysłane zaproszenia";
     public $invite = "Zaproś";
     public $search_player = "Wyszukaj Gracza";
 
